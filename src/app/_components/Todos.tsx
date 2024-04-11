@@ -3,13 +3,26 @@
 import { trpc } from "../_trpc/client";
 
 export default function Todos() {
-  const message = trpc.hi.useQuery();
-  console.log(message.data);
+  const {
+    isLoading,
+    isError,
+    error,
+    data: todos,
+  } = trpc.todos.getAll.useQuery();
 
   return (
     <div>
       <p>Todos</p>
-      <p>{message.data}</p>
+
+      {isLoading ? (
+        <p>Loading..</p>
+      ) : (
+        todos?.map((todo) => (
+          <div key={todo.id} className="">
+            {todo.text}
+          </div>
+        ))
+      )}
     </div>
   );
 }
