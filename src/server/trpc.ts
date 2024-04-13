@@ -1,5 +1,8 @@
 import { initTRPC } from "@trpc/server";
+import { createContext } from "./context";
 
-const t = initTRPC.create();
+type Context = Awaited<ReturnType<typeof createContext>>;
 
-export const { router, procedure: publicProcedure } = t;
+const t = initTRPC.context<Context>().create();
+
+export const { router, procedure: publicProcedure, createCallerFactory } = t;

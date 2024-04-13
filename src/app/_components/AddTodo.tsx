@@ -17,6 +17,8 @@ export default function AddTodo() {
 
   const addTodo = async () => {
     mutation.mutate({ id: id, text: text });
+    setId(0);
+    setText("");
   };
 
   return (
