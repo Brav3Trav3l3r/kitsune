@@ -1,6 +1,5 @@
 import { createCallerFactory, publicProcedure, router } from "../trpc";
 import { z } from "zod";
-import { todoRouter } from "./todos";
 
 export const appRouter = router({
   greet: publicProcedure
@@ -9,7 +8,6 @@ export const appRouter = router({
       return `Hello ${input.name}!`;
     }),
   hi: publicProcedure.query(({ ctx }) => `${ctx.message} user!`),
-  todos: todoRouter,
 });
 
 const createCaller = createCallerFactory(appRouter);

@@ -1,0 +1,951 @@
+{
+  "id": "156822",
+  "title": {
+    "romaji": "Tensei Shitara Slime Datta Ken 3rd Season",
+    "english": "That Time I Got Reincarnated as a Slime Season 3",
+    "native": "転生したらスライムだった件 第3期"
+  },
+  "malId": 53580,
+  "trailer": {
+    "id": "gqrkjNpoeQM",
+    "site": "youtube",
+    "thumbnail": "https://i.ytimg.com/vi/gqrkjNpoeQM/hqdefault.jpg",
+    "thumbnailHash": "hash"
+  },
+  "synonyms": [
+    "Tensura 3",
+    "เกิดใหม่ทั้งทีก็เป็นสไลม์ไปซะแล้ว ภาค 3",
+    "Moi, quand je me réincarne en Slime Saison 3"
+  ],
+  "isLicensed": true,
+  "isAdult": false,
+  "countryOfOrigin": "JP",
+  "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx156822-Jzo2ITWgm4kM.jpg",
+  "imageHash": "hash",
+  "cover": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/156822-y0wPQIl3AHDA.jpg",
+  "coverHash": "hash",
+  "description": "The third season of <i>Tensei Shitara Slime Datta Ken</i>.<br><br>\nRimuru has officially become a Demon Lord after defeating Clayman. Following Walpurgis, the Demon Lords' banquet, Rimuru's domain is expanded to include the entire Great Forest of Jura. Anticipating a flood of representatives from all races showing up to pay their respects, Rimuru decides to throw a festival to commemorate the opening of Tempest, using it as an opportunity to gain new citizens and present Demon Lord Rimuru to the world. Meanwhile, in the Holy Empire of Lubelius, home base of the monster-hating cult of Luminism, Holy Knight Captain Hinata receives a message from Rimuru. But the message is actually a fabricated declaration of war sent by some unknown party. Upon learning that Hinata is heading for Tempest, Rimuru makes a decision... Thus begins a new challenge for Rimuru, striving to distinguish friend from foe in his pursuit of the ideal nation where humans and monsters can prosper together. <br><br>\n(Source: Crunchyroll)\n",
+  "status": "Ongoing",
+  "releaseDate": 2024,
+  "nextAiringEpisode": {
+    "airingTime": 1713535200,
+    "timeUntilAiring": 521580,
+    "episode": 3
+  },
+  "totalEpisodes": 24,
+  "currentEpisode": 2,
+  "rating": 82,
+  "duration": 24,
+  "genres": [
+    "Action",
+    "Adventure",
+    "Comedy",
+    "Fantasy"
+  ],
+  "studios": [
+    "8-bit"
+  ],
+  "season": "SPRING",
+  "popularity": 67364,
+  "type": "TV",
+  "startDate": {
+    "year": 2024,
+    "month": 4,
+    "day": 5
+  },
+  "endDate": {
+    "year": null,
+    "month": null,
+    "day": null
+  },
+  "recommendations": [
+    {
+      "id": 108465,
+      "malId": 39535,
+      "title": {
+        "romaji": "Mushoku Tensei: Isekai Ittara Honki Dasu",
+        "english": "Mushoku Tensei: Jobless Reincarnation",
+        "native": "無職転生 ～異世界行ったら本気だす～",
+        "userPreferred": "Mushoku Tensei: Isekai Ittara Honki Dasu"
+      },
+      "status": "Completed",
+      "episodes": 11,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx108465-B9S9zC68eS5j.jpg",
+      "imageHash": "hash",
+      "cover": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/108465-RgsRpTMhP9Sv.jpg",
+      "coverHash": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/108465-RgsRpTMhP9Sv.jpg",
+      "rating": 82,
+      "type": "TV"
+    },
+    {
+      "id": 169417,
+      "malId": 56690,
+      "title": {
+        "romaji": "Re:Monster",
+        "english": "Re:Monster",
+        "native": "Re:Monster",
+        "userPreferred": "Re:Monster"
+      },
+      "status": "Ongoing",
+      "episodes": 12,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx169417-izsfKg0hasRd.png",
+      "imageHash": "hash",
+      "cover": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/169417-NaD0wR83gTbm.jpg",
+      "coverHash": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/169417-NaD0wR83gTbm.jpg",
+      "rating": 70,
+      "type": "TV"
+    },
+    {
+      "id": 20832,
+      "malId": 29803,
+      "title": {
+        "romaji": "Overlord",
+        "english": "Overlord",
+        "native": "オーバーロード",
+        "userPreferred": "Overlord"
+      },
+      "status": "Completed",
+      "episodes": 13,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx20832-Kz7PMdGT0JI6.jpg",
+      "imageHash": "hash",
+      "cover": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/20832-NswCiSYMoI2k.jpg",
+      "coverHash": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/20832-NswCiSYMoI2k.jpg",
+      "rating": 76,
+      "type": "TV"
+    },
+    {
+      "id": 21202,
+      "malId": 30831,
+      "title": {
+        "romaji": "Kono Subarashii Sekai ni Shukufuku wo!",
+        "english": "KONOSUBA -God's blessing on this wonderful world!",
+        "native": "この素晴らしい世界に祝福を！",
+        "userPreferred": "Kono Subarashii Sekai ni Shukufuku wo!"
+      },
+      "status": "Completed",
+      "episodes": 10,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21202-TfzXuWQf2oLQ.png",
+      "imageHash": "hash",
+      "cover": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/21202-UWijdV7RMnXo.jpg",
+      "coverHash": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/21202-UWijdV7RMnXo.jpg",
+      "rating": 79,
+      "type": "TV"
+    },
+    {
+      "id": 99263,
+      "malId": 35790,
+      "title": {
+        "romaji": "Tate no Yuusha no Nariagari",
+        "english": "The Rising of the Shield Hero",
+        "native": "盾の勇者の成り上がり",
+        "userPreferred": "Tate no Yuusha no Nariagari"
+      },
+      "status": "Completed",
+      "episodes": 25,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx99263-SJSk5d6mhQZO.jpg",
+      "imageHash": "hash",
+      "cover": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/99263-IwkmdCTsDY1t.jpg",
+      "coverHash": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/99263-IwkmdCTsDY1t.jpg",
+      "rating": 77,
+      "type": "TV"
+    },
+    {
+      "id": 103632,
+      "malId": 37984,
+      "title": {
+        "romaji": "Kumo desu ga, Nani ka?",
+        "english": "So I'm a Spider, So What?",
+        "native": "蜘蛛ですが、なにか？",
+        "userPreferred": "Kumo desu ga, Nani ka?"
+      },
+      "status": "Completed",
+      "episodes": 24,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx103632-XRXP3uB17FMg.jpg",
+      "imageHash": "hash",
+      "cover": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/103632-N4ssExnvLw74.jpg",
+      "coverHash": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/103632-N4ssExnvLw74.jpg",
+      "rating": 71,
+      "type": "TV"
+    },
+    {
+      "id": 166873,
+      "malId": 55888,
+      "title": {
+        "romaji": "Mushoku Tensei II: Isekai Ittara Honki Dasu Part 2",
+        "english": "Mushoku Tensei: Jobless Reincarnation Season 2 Part 2",
+        "native": "無職転生 Ⅱ ～異世界行ったら本気だす～ 第2クール",
+        "userPreferred": "Mushoku Tensei II: Isekai Ittara Honki Dasu Part 2"
+      },
+      "status": "Ongoing",
+      "episodes": 12,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx166873-JC56ExYSC2YB.jpg",
+      "imageHash": "hash",
+      "cover": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/166873-GTi5imE5skM2.jpg",
+      "coverHash": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/166873-GTi5imE5skM2.jpg",
+      "rating": 82,
+      "type": "TV"
+    }
+  ],
+  "characters": [
+    {
+      "id": 123962,
+      "role": "MAIN",
+      "name": {
+        "first": "Rimuru",
+        "last": "Tempest",
+        "full": "Rimuru Tempest",
+        "native": "リムル・テンペスト",
+        "userPreferred": "Rimuru Tempest"
+      },
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b123962-eL9yGV0NLMF7.png",
+      "imageHash": "hash",
+      "voiceActors": [
+        {
+          "id": 127666,
+          "language": "Japanese",
+          "name": {
+            "first": "Miho",
+            "last": "Okasaki",
+            "full": "Miho Okasaki",
+            "native": " 岡咲美保",
+            "userPreferred": "Miho Okasaki"
+          },
+          "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n127666-kJTHGXxNtzKU.png",
+          "imageHash": "hash"
+        }
+      ]
+    },
+    {
+      "id": 129348,
+      "role": "SUPPORTING",
+      "name": {
+        "first": "Rigurd",
+        "last": "",
+        "full": "Rigurd",
+        "native": "リグルド",
+        "userPreferred": "Rigurd"
+      },
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b129348-uWQXM503laJT.jpg",
+      "imageHash": "hash",
+      "voiceActors": [
+        {
+          "id": 110543,
+          "language": "Japanese",
+          "name": {
+            "first": "Kanehira",
+            "last": "Yamamoto",
+            "full": "Kanehira Yamamoto",
+            "native": "山本兼平 ",
+            "userPreferred": "Kanehira Yamamoto"
+          },
+          "image": "https://s4.anilist.co/file/anilistcdn/staff/large/15543.jpg",
+          "imageHash": "hash"
+        }
+      ]
+    },
+    {
+      "id": 131033,
+      "role": "SUPPORTING",
+      "name": {
+        "first": "Diablo",
+        "last": null,
+        "full": "Diablo",
+        "native": "ディアブロ",
+        "userPreferred": "Diablo"
+      },
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b131033-QfzVoFfM5gQj.jpg",
+      "imageHash": "hash",
+      "voiceActors": [
+        {
+          "id": 95079,
+          "language": "Japanese",
+          "name": {
+            "first": "Takahiro",
+            "last": "Sakurai",
+            "full": "Takahiro Sakurai",
+            "native": "櫻井孝宏",
+            "userPreferred": "Takahiro Sakurai"
+          },
+          "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95079-MdbWTLxPUvFf.jpg",
+          "imageHash": "hash"
+        }
+      ]
+    },
+    {
+      "id": 327460,
+      "role": "SUPPORTING",
+      "name": {
+        "first": "Garde",
+        "last": "",
+        "full": "Garde",
+        "native": "ギャルド",
+        "userPreferred": "Garde"
+      },
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b327460-2douuciM1v3u.png",
+      "imageHash": "hash",
+      "voiceActors": [
+        {
+          "id": 126934,
+          "language": "Japanese",
+          "name": {
+            "first": "Wataru",
+            "last": "Komada",
+            "full": "Wataru Komada",
+            "native": "駒田航",
+            "userPreferred": "Wataru Komada"
+          },
+          "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n126934-dtnzt2NC8X0C.png",
+          "imageHash": "hash"
+        }
+      ]
+    },
+    {
+      "id": 131042,
+      "role": "SUPPORTING",
+      "name": {
+        "first": "Hinata",
+        "last": "Sakaguchi",
+        "full": "Hinata Sakaguchi",
+        "native": "坂口日向",
+        "userPreferred": "Hinata Sakaguchi"
+      },
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b131042-ve0zpRm1ZzCp.png",
+      "imageHash": "hash",
+      "voiceActors": [
+        {
+          "id": 104973,
+          "language": "Japanese",
+          "name": {
+            "first": "Manami",
+            "last": "Numakura",
+            "full": "Manami Numakura",
+            "native": "沼倉愛美",
+            "userPreferred": "Manami Numakura"
+          },
+          "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n104973-rymSxCu8uP0Y.png",
+          "imageHash": "hash"
+        }
+      ]
+    },
+    {
+      "id": 131043,
+      "role": "SUPPORTING",
+      "name": {
+        "first": "Hakurou",
+        "last": null,
+        "full": "Hakurou",
+        "native": "ハクロウ",
+        "userPreferred": "Hakurou"
+      },
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b131043-AyEdKg1Xkjrd.png",
+      "imageHash": "hash",
+      "voiceActors": [
+        {
+          "id": 95337,
+          "language": "Japanese",
+          "name": {
+            "first": "Houchuu",
+            "last": "Ootsuka",
+            "full": "Houchuu Ootsuka",
+            "native": "大塚芳忠",
+            "userPreferred": "Houchuu Ootsuka"
+          },
+          "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95337-NnvEQEBKV2dR.jpg",
+          "imageHash": "hash"
+        }
+      ]
+    },
+    {
+      "id": 129347,
+      "role": "SUPPORTING",
+      "name": {
+        "first": "Daikenja",
+        "last": null,
+        "full": "Daikenja",
+        "native": "大賢者",
+        "userPreferred": "Daikenja"
+      },
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b129347-m1xftx27rHwl.jpg",
+      "imageHash": "hash",
+      "voiceActors": [
+        {
+          "id": 95144,
+          "language": "Japanese",
+          "name": {
+            "first": "Megumi",
+            "last": "Toyoguchi",
+            "full": "Megumi Toyoguchi",
+            "native": "豊口めぐみ",
+            "userPreferred": "Megumi Toyoguchi"
+          },
+          "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95144-9Y8CtDVmxogE.jpg",
+          "imageHash": "hash"
+        }
+      ]
+    },
+    {
+      "id": 327461,
+      "role": "SUPPORTING",
+      "name": {
+        "first": "Fritz",
+        "last": null,
+        "full": "Fritz",
+        "native": "フリッツ",
+        "userPreferred": "Fritz"
+      },
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b327461-5CnbmIrjIdko.png",
+      "imageHash": "hash",
+      "voiceActors": [
+        {
+          "id": 107705,
+          "language": "Japanese",
+          "name": {
+            "first": "Taishi",
+            "last": "Murata",
+            "full": "Taishi Murata",
+            "native": "村田太志",
+            "userPreferred": "Taishi Murata"
+          },
+          "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n107705-lVfYRzWY5AFW.jpg",
+          "imageHash": "hash"
+        }
+      ]
+    },
+    {
+      "id": 128040,
+      "role": "SUPPORTING",
+      "name": {
+        "first": "Shuna",
+        "last": null,
+        "full": "Shuna",
+        "native": "シュナ（朱菜）",
+        "userPreferred": "Shuna"
+      },
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b128040-QOhtFHgfOT5O.png",
+      "imageHash": "hash",
+      "voiceActors": [
+        {
+          "id": 119616,
+          "language": "Japanese",
+          "name": {
+            "first": "Sayaka",
+            "last": "Senbongi",
+            "full": "Sayaka Senbongi",
+            "native": "千本木彩花",
+            "userPreferred": "Sayaka Senbongi"
+          },
+          "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n119616-Dakq7gsUo2ja.png",
+          "imageHash": "hash"
+        }
+      ]
+    },
+    {
+      "id": 129350,
+      "role": "SUPPORTING",
+      "name": {
+        "first": "Gobta",
+        "last": null,
+        "full": "Gobta",
+        "native": "ゴブタ",
+        "userPreferred": "Gobta"
+      },
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b129350-qF2RlaSXb8Ro.jpg",
+      "imageHash": "hash",
+      "voiceActors": [
+        {
+          "id": 129351,
+          "language": "Japanese",
+          "name": {
+            "first": "Asuna",
+            "last": "Tomari",
+            "full": "Asuna Tomari",
+            "native": "泊明日菜",
+            "userPreferred": "Asuna Tomari"
+          },
+          "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n129351-XYMaAkroHj8S.jpg",
+          "imageHash": "hash"
+        }
+      ]
+    },
+    {
+      "id": 326217,
+      "role": "SUPPORTING",
+      "name": {
+        "first": "Granbell",
+        "last": "Rosso",
+        "full": "Granbell Rosso",
+        "native": "グランベル・ロッゾ",
+        "userPreferred": "Granbell Rosso"
+      },
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b326217-3k5fJyK67TPp.png",
+      "imageHash": "hash",
+      "voiceActors": [
+        {
+          "id": 95212,
+          "language": "Japanese",
+          "name": {
+            "first": "Daisuke",
+            "last": "Ono",
+            "full": "Daisuke Ono",
+            "native": "小野大輔",
+            "userPreferred": "Daisuke Ono"
+          },
+          "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95212-wX1M4LJN96q2.png",
+          "imageHash": "hash"
+        }
+      ]
+    },
+    {
+      "id": 327462,
+      "role": "SUPPORTING",
+      "name": {
+        "first": "Saare",
+        "last": null,
+        "full": "Saare",
+        "native": "サーレ",
+        "userPreferred": "Saare"
+      },
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b327462-YHdnq7xndugw.png",
+      "imageHash": "hash",
+      "voiceActors": [
+        {
+          "id": 119672,
+          "language": "Japanese",
+          "name": {
+            "first": "Shouya",
+            "last": "Chiba",
+            "full": "Shouya Chiba",
+            "native": "千葉翔也",
+            "userPreferred": "Shouya Chiba"
+          },
+          "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n119672-4RIzYsFUy8EH.png",
+          "imageHash": "hash"
+        }
+      ]
+    },
+    {
+      "id": 128034,
+      "role": "SUPPORTING",
+      "name": {
+        "first": "Veldora",
+        "last": "Tempest",
+        "full": "Veldora Tempest",
+        "native": "ヴェルドラ＝テンペスト",
+        "userPreferred": "Veldora Tempest"
+      },
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b128034-Gg5MrpTFNSv8.png",
+      "imageHash": "hash",
+      "voiceActors": [
+        {
+          "id": 96489,
+          "language": "Japanese",
+          "name": {
+            "first": "Tomoaki",
+            "last": "Maeno",
+            "full": "Tomoaki Maeno",
+            "native": "前野智昭",
+            "userPreferred": "Tomoaki Maeno"
+          },
+          "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n96489-xTzYxgdC9g9l.png",
+          "imageHash": "hash"
+        }
+      ]
+    },
+    {
+      "id": 133522,
+      "role": "SUPPORTING",
+      "name": {
+        "first": "Geld",
+        "last": null,
+        "full": "Geld",
+        "native": "ゲルド",
+        "userPreferred": "Geld"
+      },
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b133522-CkNIcvE1JJ08.jpg",
+      "imageHash": "hash",
+      "voiceActors": [
+        {
+          "id": 95989,
+          "language": "Japanese",
+          "name": {
+            "first": "Tarou",
+            "last": "Yamaguchi",
+            "full": "Tarou Yamaguchi",
+            "native": "山口太郎",
+            "userPreferred": "Tarou Yamaguchi"
+          },
+          "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95989-SwsXqIywUZXc.png",
+          "imageHash": "hash"
+        }
+      ]
+    },
+    {
+      "id": 212506,
+      "role": "SUPPORTING",
+      "name": {
+        "first": "Mariabell",
+        "last": "Rosso",
+        "full": "Mariabell Rosso",
+        "native": "マリアベル・ロッゾ",
+        "userPreferred": "Mariabell Rosso"
+      },
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b212506-fizX7J5IV4N1.jpg",
+      "imageHash": "hash",
+      "voiceActors": [
+        {
+          "id": 106297,
+          "language": "Japanese",
+          "name": {
+            "first": "Inori",
+            "last": "Minase",
+            "full": "Inori Minase",
+            "native": "水瀬いのり",
+            "userPreferred": "Inori Minase"
+          },
+          "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n106297-DYjwI6p4yZNJ.jpg",
+          "imageHash": "hash"
+        }
+      ]
+    },
+    {
+      "id": 327466,
+      "role": "SUPPORTING",
+      "name": {
+        "first": "Glenda",
+        "last": "Attley",
+        "full": "Glenda Attley",
+        "native": "グレンダ・アトリー",
+        "userPreferred": "Glenda Attley"
+      },
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b327466-J2FDz3yjVkyj.png",
+      "imageHash": "hash",
+      "voiceActors": [
+        {
+          "id": 119707,
+          "language": "Japanese",
+          "name": {
+            "first": "Mari",
+            "last": "Hino",
+            "full": "Mari Hino",
+            "native": "日野まり",
+            "userPreferred": "Mari Hino"
+          },
+          "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n119707-gZ4Zew3Pdulp.png",
+          "imageHash": "hash"
+        }
+      ]
+    },
+    {
+      "id": 128038,
+      "role": "SUPPORTING",
+      "name": {
+        "first": "Benimaru",
+        "last": null,
+        "full": "Benimaru",
+        "native": "ベニマル（紅丸）",
+        "userPreferred": "Benimaru"
+      },
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b128038-VgVcqf6NDGJ5.png",
+      "imageHash": "hash",
+      "voiceActors": [
+        {
+          "id": 112635,
+          "language": "Japanese",
+          "name": {
+            "first": "Makoto",
+            "last": "Furukawa",
+            "full": "Makoto Furukawa",
+            "native": "古川慎",
+            "userPreferred": "Makoto Furukawa"
+          },
+          "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n112635-ORlGvRvgf5Nq.png",
+          "imageHash": "hash"
+        }
+      ]
+    },
+    {
+      "id": 131034,
+      "role": "SUPPORTING",
+      "name": {
+        "first": "Ramiris",
+        "last": null,
+        "full": "Ramiris",
+        "native": "ラミリス",
+        "userPreferred": "Ramiris"
+      },
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/n131034-Xb6oPnWAbpZq.jpg",
+      "imageHash": "hash",
+      "voiceActors": [
+        {
+          "id": 122615,
+          "language": "Japanese",
+          "name": {
+            "first": "Anzu",
+            "last": "Haruno",
+            "full": "Anzu Haruno",
+            "native": "春野杏",
+            "userPreferred": "Anzu Haruno"
+          },
+          "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n122615-ccA7AB2eYvFb.png",
+          "imageHash": "hash"
+        }
+      ]
+    },
+    {
+      "id": 327453,
+      "role": "SUPPORTING",
+      "name": {
+        "first": "Renard",
+        "last": "Jester",
+        "full": "Renard Jester",
+        "native": "レナード・ジェスター",
+        "userPreferred": "Renard Jester"
+      },
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b327453-AaD87DM7fd8r.png",
+      "imageHash": "hash",
+      "voiceActors": [
+        {
+          "id": 95074,
+          "language": "Japanese",
+          "name": {
+            "first": "Kenji",
+            "last": "Nojima",
+            "full": "Kenji Nojima",
+            "native": "野島健児",
+            "userPreferred": "Kenji Nojima"
+          },
+          "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95074-ilLCdbpWIgrF.png",
+          "imageHash": "hash"
+        }
+      ]
+    },
+    {
+      "id": 327467,
+      "role": "SUPPORTING",
+      "name": {
+        "first": "Grigori",
+        "last": null,
+        "full": "Grigori",
+        "native": "グレゴリー",
+        "userPreferred": "Grigori"
+      },
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b327467-M6QYkW86C2bA.png",
+      "imageHash": "hash",
+      "voiceActors": [
+        {
+          "id": 134336,
+          "language": "Japanese",
+          "name": {
+            "first": "Masashi",
+            "last": "Yamane",
+            "full": "Masashi Yamane",
+            "native": "山根雅史",
+            "userPreferred": "Masashi Yamane"
+          },
+          "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n134336-1YmYcqStqD2O.jpg",
+          "imageHash": "hash"
+        }
+      ]
+    },
+    {
+      "id": 128033,
+      "role": "SUPPORTING",
+      "name": {
+        "first": "Shion",
+        "last": null,
+        "full": "Shion",
+        "native": "シオン（紫苑）",
+        "userPreferred": "Shion"
+      },
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b128033-fLbTgW4M2yj3.png",
+      "imageHash": "hash",
+      "voiceActors": [
+        {
+          "id": 118510,
+          "language": "Japanese",
+          "name": {
+            "first": "Mao",
+            "last": "Ichimichi",
+            "full": "Mao Ichimichi",
+            "native": "市道真央",
+            "userPreferred": "Mao Ichimichi"
+          },
+          "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n118510-iMUv5D7W99C1.png",
+          "imageHash": "hash"
+        }
+      ]
+    },
+    {
+      "id": 131041,
+      "role": "SUPPORTING",
+      "name": {
+        "first": "Gabiru",
+        "last": null,
+        "full": "Gabiru",
+        "native": "ガビル",
+        "userPreferred": "Gabiru"
+      },
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b131041-MKPEBzVY1XPh.jpg",
+      "imageHash": "hash",
+      "voiceActors": [
+        {
+          "id": 105094,
+          "language": "Japanese",
+          "name": {
+            "first": "Jun",
+            "last": "Fukushima",
+            "full": "Jun Fukushima",
+            "native": "福島潤",
+            "userPreferred": "Jun Fukushima"
+          },
+          "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n105094-Udz3lBFTZa5W.png",
+          "imageHash": "hash"
+        }
+      ]
+    },
+    {
+      "id": 327457,
+      "role": "SUPPORTING",
+      "name": {
+        "first": "Arnaud",
+        "last": "Bauman",
+        "full": "Arnaud Bauman",
+        "native": "アルノー・バウマン",
+        "userPreferred": "Arnaud Bauman"
+      },
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b327457-5HTLfl0iKH3q.png",
+      "imageHash": "hash",
+      "voiceActors": [
+        {
+          "id": 95576,
+          "language": "Japanese",
+          "name": {
+            "first": "Eiji",
+            "last": "Takemoto",
+            "full": "Eiji Takemoto",
+            "native": "竹本英史",
+            "userPreferred": "Eiji Takemoto"
+          },
+          "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95576-daJz6YMxGaX6.png",
+          "imageHash": "hash"
+        }
+      ]
+    },
+    {
+      "id": 328246,
+      "role": "SUPPORTING",
+      "name": {
+        "first": "Damrada",
+        "last": null,
+        "full": "Damrada",
+        "native": "ダムラダ",
+        "userPreferred": "Damrada"
+      },
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b328246-wvrmmRsbwUCC.jpg",
+      "imageHash": "hash",
+      "voiceActors": [
+        {
+          "id": 95087,
+          "language": "Japanese",
+          "name": {
+            "first": "Daisuke",
+            "last": "Namikawa",
+            "full": "Daisuke Namikawa",
+            "native": "浪川大輔",
+            "userPreferred": "Daisuke Namikawa"
+          },
+          "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n95087-6dlBBbejsPyg.png",
+          "imageHash": "hash"
+        }
+      ]
+    },
+    {
+      "id": 128035,
+      "role": "SUPPORTING",
+      "name": {
+        "first": "Ranga",
+        "last": null,
+        "full": "Ranga",
+        "native": "ランガ（嵐牙）",
+        "userPreferred": "Ranga"
+      },
+      "image": "https://s4.anilist.co/file/anilistcdn/character/large/b128035-7r8BX1tt8BKg.png",
+      "imageHash": "hash",
+      "voiceActors": [
+        {
+          "id": 124703,
+          "language": "Japanese",
+          "name": {
+            "first": "Chikahiro",
+            "last": "Kobayashi",
+            "full": "Chikahiro Kobayashi",
+            "native": "小林親弘",
+            "userPreferred": "Chikahiro Kobayashi"
+          },
+          "image": "https://s4.anilist.co/file/anilistcdn/staff/large/n124703-rtSB51tfBuY7.png",
+          "imageHash": "hash"
+        }
+      ]
+    }
+  ],
+  "color": "#e4785d",
+  "relations": [
+    {
+      "id": 86355,
+      "malId": 87610,
+      "relationType": "ADAPTATION",
+      "title": {
+        "romaji": "Tensei Shitara Slime Datta Ken",
+        "english": "That Time I Got Reincarnated as a Slime",
+        "native": "転生したらスライムだった件",
+        "userPreferred": "Tensei Shitara Slime Datta Ken"
+      },
+      "status": "Ongoing",
+      "episodes": null,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/bx86355-pGwmLqVTwwE4.jpg",
+      "imageHash": "hash",
+      "cover": "https://s4.anilist.co/file/anilistcdn/media/manga/banner/86355-f0kILfzr9zZA.jpg",
+      "coverHash": "hash",
+      "rating": 84,
+      "type": "NOVEL"
+    },
+    {
+      "id": 86399,
+      "malId": 87609,
+      "relationType": "ADAPTATION",
+      "title": {
+        "romaji": "Tensei Shitara Slime Datta Ken",
+        "english": "That Time I Got Reincarnated as a Slime",
+        "native": "転生したらスライムだった件",
+        "userPreferred": "Tensei Shitara Slime Datta Ken"
+      },
+      "status": "Ongoing",
+      "episodes": null,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/manga/cover/large/nx86399-NwbRFVh5koqc.jpg",
+      "imageHash": "hash",
+      "cover": "https://s4.anilist.co/file/anilistcdn/media/manga/banner/86399-Tejvk4pMg9PR.jpg",
+      "coverHash": "hash",
+      "rating": 83,
+      "type": "MANGA"
+    },
+    {
+      "id": 116742,
+      "malId": 41487,
+      "relationType": "PREQUEL",
+      "title": {
+        "romaji": "Tensei Shitara Slime Datta Ken 2nd Season Part 2",
+        "english": "That Time I Got Reincarnated as a Slime Season 2 Part 2",
+        "native": "転生したらスライムだった件 第2期 第2クール",
+        "userPreferred": "Tensei Shitara Slime Datta Ken 2nd Season Part 2"
+      },
+      "status": "Completed",
+      "episodes": 12,
+      "image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx116742-jn0dW23ftehq.jpg",
+      "imageHash": "hash",
+      "cover": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/116742-yJjsZw2UppWO.jpg",
+      "coverHash": "hash",
+      "rating": 83,
+      "type": "TV"
+    }
+  ]
+}
