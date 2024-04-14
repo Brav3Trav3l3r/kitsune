@@ -1,10 +1,31 @@
 import AnimeCard from "@/app/_components/anime-card";
-import { relation } from "@/app/types/api/anime";
+import { title } from "@/app/types/api/anime";
 import { z } from "zod";
 
-type Relations = z.infer<typeof relation>[];
+const relationObject = z.array(
+  z.object({
+    id: z.union([z.string(), z.number()]),
+    malId: z.number(),
+    relationType: z.string(),
+    title: title,
+    status: z.string(),
+    episodes: z.number().nullable().optional(),
+    image: z.string(),
+    cover: z.string(),
+    rating: z.number().nullable(),
+    type: z.string(),
+  })
+);
+
+type Relations = z.infer<typeof relationObject>;
 
 export default function Relations({ relations }: { relations: Relations }) {
+  try {
+    relationObject.parse(relations);
+  } catch (error) {
+    console.error(error);
+  }
+
   return (
     <div className="mt-8">
       <p className="text-lg font-medium">Relations</p>

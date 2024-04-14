@@ -1,17 +1,15 @@
 import Container from "@/app/_components/container";
 import { Button } from "@/app/_components/ui/button";
-import { Progress } from "@/app/_components/ui/progress";
 import { Separator } from "@/app/_components/ui/separator";
-import { anime } from "@/app/types/api/anime";
-import { ProgressIndicator } from "@radix-ui/react-progress";
+import { anime as animeInfo } from "@/app/types/api/anime";
 import parse from "html-react-parser";
 import { Bookmark, Share2 } from "lucide-react";
-import { z } from "zod";
-import Meta from "../_components/meta";
+import { ZodError, z } from "zod";
 import Characters from "../_components/characters";
+import Meta from "../_components/meta";
 import Relations from "../_components/relations";
 
-type Anime = z.infer<typeof anime>;
+type Anime = z.infer<typeof animeInfo>;
 
 const getAnime = async (animeId: string): Promise<Anime> => {
   const res = await fetch(
@@ -31,6 +29,16 @@ export default async function Anime({
   params: { animeId: string };
 }) {
   const anime = await getAnime(params.animeId);
+
+  try {
+    animeInfo.parse(anime);
+  } catch (e) {
+    if (e instanceof ZodError) {
+      console.log(`${e.message} at anime for ${params.animeId}`);
+    } else {
+      console.log("parsing error at anime");
+    }
+  }
 
   return (
     <div>
@@ -59,7 +67,7 @@ export default async function Anime({
 
             <div className="mt-8 flex flex-col gap-2">
               <p className="text-3xl font-semibold">
-                {anime.title.english ?? anime.title.romaji}
+                {anime.title?.english ?? anime.title?.romaji}
               </p>
               <div className="flex gap-4">
                 <p>

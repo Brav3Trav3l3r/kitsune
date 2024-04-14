@@ -1,8 +1,25 @@
 import { z } from "zod";
-import { animeResponse } from "../types/api/anime";
 import AnimeCard from "./anime-card";
 
-type AnimeResponse = z.infer<typeof animeResponse>;
+const popularAnime = z.object({
+  id: z.string(),
+  malId: z.number(),
+  title: z.object({
+    romaji: z.string().nullable().optional(),
+    english: z.string().nullable().optional(),
+    native: z.string().nullable().optional(),
+  }),
+  image: z.string(),
+  type: z.string(),
+  totalEpisodes: z.number(),
+});
+
+const response = z.object({
+  currentPage: z.union([z.string(), z.number()]),
+  results: z.array(popularAnime),
+});
+
+type AnimeResponse = z.infer<typeof response>;
 
 const getPopular = async (): Promise<AnimeResponse> => {
   const res = await fetch(
@@ -20,7 +37,7 @@ export default async function PopularAnime() {
   const trendings = await getPopular();
 
   try {
-    animeResponse.parse(trendings);
+    response.parse(trendings);
   } catch (error) {
     console.log(error);
   }

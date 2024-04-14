@@ -1,8 +1,22 @@
 import { z } from "zod";
-import { animeResponse } from "../types/api/anime";
 import AnimeCard from "./anime-card";
+import { title } from "../types/api/anime";
 
-type AnimeResponse = z.infer<typeof animeResponse>;
+const trendingAnime = z.object({
+  id: z.string(),
+  malId: z.number(),
+  title: title,
+  image: z.string(),
+  type: z.string(),
+  totalEpisodes: z.number(),
+});
+
+const response = z.object({
+  currentPage: z.union([z.string(), z.number()]),
+  results: z.array(trendingAnime),
+});
+
+type AnimeResponse = z.infer<typeof response>;
 
 const getTrending = async (): Promise<AnimeResponse> => {
   const res = await fetch(
@@ -20,7 +34,7 @@ export default async function TrendingAnime() {
   const trendings = await getTrending();
 
   try {
-    animeResponse.parse(trendings);
+    response.parse(trendings);
   } catch (error) {
     console.log(error);
   }

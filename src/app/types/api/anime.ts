@@ -1,45 +1,40 @@
 import { z } from "zod";
 
+export const title = z.object({
+  romaji: z.string().nullable().optional(),
+  english: z.string().nullable().optional(),
+  native: z.string().nullable().optional(),
+});
+
 export const character = z.object({
   id: z.number(),
   role: z.string(),
   name: z.object({
-    full: z.string(),
-    native: z.string(),
-    userPreferred: z.string(),
+    full: z.string().nullable().optional(),
+    native: z.string().nullable().optional(),
+    userPreferred: z.string().nullable().optional(),
   }),
   image: z.string(),
 });
 
 export const relation = z.object({
-  id: z.number(),
+  id: z.union([z.number(), z.string()]),
   malId: z.number(),
   relationType: z.string(),
-  title: z.object({
-    romaji: z.string(),
-    english: z.string(),
-    native: z.string().optional(),
-    userPreferred: z.string(),
-  }),
+  title: title,
   status: z.string(),
   episodes: z.number().nullable(),
   image: z.string(),
   cover: z.string(),
   rating: z.number().nullable(),
-  type: z.string().optional(),
+  type: z.string(),
 });
 
 export const anime = z.object({
   id: z.union([z.number(), z.string()]),
   image: z.string(),
-  episodeNumber: z.number().optional(),
   totalEpisodes: z.number(),
-  title: z.object({
-    romaji: z.string(),
-    english: z.string(),
-    native: z.string().optional(),
-    userPreferred: z.string(),
-  }),
+  title: title,
   cover: z.string(),
   type: z.string(),
   releaseDate: z.number().optional(),

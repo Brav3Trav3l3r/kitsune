@@ -22,7 +22,9 @@ export default function Characters({ characters }: { characters: Characters }) {
             </Avatar>
 
             <div className="">
-              <p className="text-sm text-foreground">{character.name.full}</p>
+              <p className="text-sm text-foreground">
+                {character.name.full ?? character.name.native}
+              </p>
               <p className="text-xs text-foreground/50 mt-2">
                 {character.role}
               </p>

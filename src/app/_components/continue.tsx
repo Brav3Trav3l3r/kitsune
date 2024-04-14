@@ -1,9 +1,24 @@
 import { RefreshCcw } from "lucide-react";
-import { animeResponse } from "../types/api/anime";
+import { animeResponse, title } from "../types/api/anime";
 import AnimeCard from "./anime-card";
-import { z } from "zod";
+import { ZodError, z } from "zod";
 
-type AnimeResponse = z.infer<typeof animeResponse>;
+const recentAnime = z.object({
+  id: z.string(),
+  title: title,
+  image: z.string(),
+  episodeId: z.string(),
+  episodeNumber: z.number(),
+  type: z.string(),
+});
+
+const response = z.object({
+  currentPage: z.union([z.string(), z.number()]),
+  totalResults: z.number(),
+  results: z.array(recentAnime),
+});
+
+type AnimeResponse = z.infer<typeof response>;
 
 const getRecentUpdated = async (): Promise<AnimeResponse> => {
   const res = await fetch(
@@ -21,9 +36,13 @@ export default async function Continue() {
   const recentUpdated = await getRecentUpdated();
 
   try {
-    animeResponse.parse(recentUpdated);
-  } catch (err) {
-    console.log(err);
+    response.parse(recentUpdated);
+  } catch (e) {
+    if (e instanceof ZodError) {
+      console.log(`${e.message} at anime`);
+    } else {
+      console.log("parsing error at anime");
+    }
   }
 
   return (
@@ -31,7 +50,7 @@ export default async function Continue() {
       <div className="border-primary border-l-4 py-2 px-4 font-medium flex gap-4 items-center">
         <p>Continue watching</p>
         <div className="text-primary/75">
-          <RefreshCcw size={20}/>
+          <RefreshCcw size={20} />
         </div>
       </div>
 
