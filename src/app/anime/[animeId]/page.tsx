@@ -1,9 +1,94 @@
 import Container from "@/app/_components/container";
+import { Button } from "@/app/_components/ui/button";
+import { Progress } from "@/app/_components/ui/progress";
+import { Separator } from "@/app/_components/ui/separator";
+import { anime } from "@/app/types/api/anime";
+import { ProgressIndicator } from "@radix-ui/react-progress";
+import parse from "html-react-parser";
+import { Bookmark, Share2 } from "lucide-react";
+import { z } from "zod";
+import Meta from "../_components/meta";
+import Characters from "../_components/characters";
+import Relations from "../_components/relations";
 
-export default function Anime({ params }: { params: { animeId: string } }) {
+type Anime = z.infer<typeof anime>;
+
+const getAnime = async (animeId: string): Promise<Anime> => {
+  const res = await fetch(
+    `${process.env.CONSUMET_URL}/meta/anilist/data/${animeId}`
+  );
+
+  if (!res.ok) {
+    throw new Error("Could not fetch anime data");
+  }
+
+  return res.json();
+};
+
+export default async function Anime({
+  params,
+}: {
+  params: { animeId: string };
+}) {
+  const anime = await getAnime(params.animeId);
+
   return (
     <div>
-      <Container>{params.animeId}</Container>
+      <div className="h-96 relative z-0">
+        <img
+          src={anime.cover}
+          alt=""
+          className="w-full h-full object-cover brightness-75"
+        />
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background to-transparent h-48"></div>
+      </div>
+      <div className="-mt-32 relative z-10">
+        <Container>
+          <div className="flex gap-10">
+            <div className="">
+              <div className="h-96 shrink-0 aspect-[2/3] rounded-lg overflow-hidden drop-shadow-2xl">
+                <img
+                  src={anime.image}
+                  alt=""
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <Meta anime={anime} />
+            </div>
+
+            <div className="mt-8 flex flex-col gap-2">
+              <p className="text-3xl font-semibold">
+                {anime.title.english ?? anime.title.romaji}
+              </p>
+              <div className="flex gap-4">
+                <p>
+                  {anime.type} ({anime.startDate?.year} - {anime.endDate?.year})
+                </p>
+                <Separator orientation="vertical" className="bg-foreground" />
+                <p>{anime.totalEpisodes} Episodes</p>
+              </div>
+
+              <div className="flex mt-4 gap-4">
+                <Button>Watch now</Button>
+                <Button variant="outline" size="icon">
+                  <Bookmark className="h-4 w-4" />
+                </Button>
+                <Button variant="outline" size="icon">
+                  <Share2 className="h-4 w-4" />
+                </Button>
+              </div>
+
+              <p className="mt-4 max-w-prose text-foreground/75">
+                {anime.description && parse(anime.description)}
+              </p>
+
+              <Relations relations={anime.relations} />
+              <Characters characters={anime.characters} />
+            </div>
+          </div>
+        </Container>
+      </div>
     </div>
   );
 }
