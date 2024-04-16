@@ -3,7 +3,7 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@/app/_components/ui/avatar";
-import { character } from "@/app/types/api/anime";
+import { character } from "@/app/_types/api/anime";
 import { z } from "zod";
 
 type Characters = z.infer<typeof character>[];

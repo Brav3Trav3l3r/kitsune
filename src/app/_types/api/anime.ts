@@ -19,7 +19,7 @@ export const character = z.object({
 
 export const relation = z.object({
   id: z.union([z.number(), z.string()]),
-  malId: z.number(),
+  malId: z.number().nullable(),
   relationType: z.string(),
   title: title,
   status: z.string(),
@@ -36,7 +36,7 @@ export const anime = z.object({
   totalEpisodes: z.number(),
   title: title,
   cover: z.string(),
-  type: z.string(),
+  type: z.string().nullable(),
   releaseDate: z.number().optional(),
   startDate: z
     .object({

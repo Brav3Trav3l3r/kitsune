@@ -1,6 +1,6 @@
 import { ZodError, z } from "zod";
 import AnimeCard from "./anime-card";
-import { title } from "../types/api/anime";
+import { title } from "../_types/api/anime";
 
 const recentAnime = z.object({
   id: z.string(),

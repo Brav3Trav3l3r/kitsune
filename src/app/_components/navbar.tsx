@@ -1,18 +1,17 @@
-"use client";
-
-import { usePathname } from "next/navigation";
 import { ThemeToggle } from "./theme-toggle";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import Link from "next/link";
 import { Menu, Search } from "lucide-react";
+import { UserButton, auth } from "@clerk/nextjs";
+import NavLinks from "./nav-links";
 
 export default function Navbar() {
-  const pathname = usePathname();
+  const { userId } = auth();
 
   return (
-    <header className="">
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+    <header className="border-b">
+      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 ">
         <div className="flex h-16 items-center justify-between">
           <div className="flex gap-4 items-center">
             <Link className="block text-primary" href="/">
@@ -39,72 +38,25 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:block">
-            <nav aria-label="Global">
-              <ul className="flex items-center gap-6 text-sm">
-                <li>
-                  <Link
-                    className={`${
-                      pathname === "/" ? "text-primary" : "text-foreground"
-                    }  transition hover:opacity-75  `}
-                    href="/"
-                  >
-                    {" "}
-                    Home{" "}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={`${
-                      pathname === "/movies"
-                        ? "text-primary"
-                        : "text-foreground"
-                    }  transition hover:opacity-75`}
-                    href="#"
-                  >
-                    {" "}
-                    Movies{" "}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={`${
-                      pathname === "/anime" ? "text-primary" : "text-foreground"
-                    }  transition hover:opacity-75`}
-                    href="#"
-                  >
-                    {" "}
-                    Anime{" "}
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    className={`${
-                      pathname === "/library"
-                        ? "text-primary"
-                        : "text-foreground"
-                    }  transition hover:opacity-75`}
-                    href="#"
-                  >
-                    {" "}
-                    Library{" "}
-                  </Link>
-                </li>
-              </ul>
-            </nav>
+            <NavLinks />
           </div>
 
           <div className="flex items-center gap-4">
-            <div className="sm:flex sm:gap-4">
-              <Link href="/login">
-                <Button>Login</Button>
-              </Link>
-
-              <div className="hidden sm:flex">
-                <Link href={"/register"}>
-                  <Button variant={"secondary"}>Register</Button>
+            {!userId ? (
+              <div className="sm:flex sm:gap-4">
+                <Link href="/sign-in">
+                  <Button>Login</Button>
                 </Link>
+
+                <div className="hidden sm:flex">
+                  <Link href={"/sign-up"}>
+                    <Button variant={"secondary"}>Register</Button>
+                  </Link>
+                </div>
               </div>
-            </div>
+            ) : (
+              <UserButton />
+            )}
 
             <div className="block md:hidden">
               <Button variant="outline" size="icon">

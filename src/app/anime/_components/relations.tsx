@@ -1,11 +1,11 @@
 import AnimeCard from "@/app/_components/anime-card";
-import { title } from "@/app/types/api/anime";
+import { title } from "@/app/_types/api/anime";
 import { z } from "zod";
 
 const relationObject = z.array(
   z.object({
     id: z.union([z.string(), z.number()]),
-    malId: z.number(),
+    malId: z.number().nullable(),
     relationType: z.string(),
     title: title,
     status: z.string(),
@@ -13,7 +13,7 @@ const relationObject = z.array(
     image: z.string(),
     cover: z.string(),
     rating: z.number().nullable(),
-    type: z.string(),
+    type: z.string().nullable(),
   })
 );
 

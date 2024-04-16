@@ -1,4 +1,4 @@
-import { anime } from "@/app/types/api/anime";
+import { anime } from "@/app/_types/api/anime";
 import { z } from "zod";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
@@ -52,18 +52,18 @@ export default function Meta({ anime }: { anime: Anime }) {
         <p className=" text-foreground/50">{anime.season}</p>
       </div>
 
-      {!anime.synonyms ? (
-        ""
-      ) : (
-        <div className="">
-          <p className="font-medium text-foreground/95">Synonym(s)</p>
-          <div className="max-w-56 text-foreground/50 flex flex-col gap-1">
-            {anime.synonyms.map((synonym) => (
-              <p key={synonym}>{synonym}</p>
-            ))}
-          </div>
-        </div>
-      )}
+      {!anime.synonyms
+        ? ""
+        : !!anime.synonyms.length && (
+            <div className="">
+              <p className="font-medium text-foreground/95">Synonym(s)</p>
+              <div className="max-w-56 text-foreground/50 flex flex-col gap-1">
+                {anime.synonyms.map((synonym) => (
+                  <p key={synonym}>{synonym}</p>
+                ))}
+              </div>
+            </div>
+          )}
     </div>
   );
 }

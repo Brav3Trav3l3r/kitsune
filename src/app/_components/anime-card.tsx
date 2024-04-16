@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ZodError, z } from "zod";
-import { title } from "../types/api/anime";
+import { title } from "../_types/api/anime";
 
 const animeCard = z.object({
   id: z.union([z.string(), z.number()]),

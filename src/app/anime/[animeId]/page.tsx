@@ -1,13 +1,15 @@
 import Container from "@/app/_components/container";
 import { Button } from "@/app/_components/ui/button";
 import { Separator } from "@/app/_components/ui/separator";
-import { anime as animeInfo } from "@/app/types/api/anime";
+import { anime as animeInfo } from "@/app/_types/api/anime";
 import parse from "html-react-parser";
 import { Bookmark, Share2 } from "lucide-react";
 import { ZodError, z } from "zod";
 import Characters from "../_components/characters";
 import Meta from "../_components/meta";
 import Relations from "../_components/relations";
+import Interactions from "../_components/interactions";
+import { auth } from "@clerk/nextjs";
 
 type Anime = z.infer<typeof animeInfo>;
 
@@ -29,6 +31,7 @@ export default async function Anime({
   params: { animeId: string };
 }) {
   const anime = await getAnime(params.animeId);
+  const { userId } = auth();
 
   try {
     animeInfo.parse(anime);
@@ -77,15 +80,7 @@ export default async function Anime({
                 <p>{anime.totalEpisodes} Episodes</p>
               </div>
 
-              <div className="flex mt-4 gap-4">
-                <Button>Watch now</Button>
-                <Button variant="outline" size="icon">
-                  <Bookmark className="h-4 w-4" />
-                </Button>
-                <Button variant="outline" size="icon">
-                  <Share2 className="h-4 w-4" />
-                </Button>
-              </div>
+              <Interactions anime={anime} userId={userId} />
 
               <p className="mt-4 max-w-prose text-foreground/75">
                 {anime.description && parse(anime.description)}

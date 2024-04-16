@@ -1,5 +1,5 @@
 import { RefreshCcw } from "lucide-react";
-import { animeResponse, title } from "../types/api/anime";
+import { animeResponse, title } from "../_types/api/anime";
 import AnimeCard from "./anime-card";
 import { ZodError, z } from "zod";
 

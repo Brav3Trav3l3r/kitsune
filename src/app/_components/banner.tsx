@@ -1,5 +1,5 @@
 import parse from "html-react-parser";
-import anime from "../data/animeData.json";
+import anime from "../_data/animeData.json";
 import { Badge } from "./ui/badge";
 
 export default function Banner() {
