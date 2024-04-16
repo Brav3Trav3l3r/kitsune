@@ -3,6 +3,7 @@ import { protectedProcedure, router } from "../trpc";
 import db from "../db/drizzle";
 import { library } from "../db/schema";
 import { and, eq } from "drizzle-orm";
+import { takeUniqueOrThrow } from "./helper";
 
 export const libraryRouter = router({
   get: protectedProcedure
@@ -18,7 +19,7 @@ export const libraryRouter = router({
             eq(library.media_id, input.media_id),
             eq(library.user_id, opts.ctx.auth.userId)
           )
-        );
+        ).then(takeUniqueOrThrow)
 
       return row;
     }),
@@ -44,5 +45,20 @@ export const libraryRouter = router({
         title_native: input.title_native,
         status: input.status,
       });
+    }),
+  remove: protectedProcedure
+    .input(z.object({ media_id: z.string() }))
+    .mutation(async ({ ctx, input }) => {
+      const deletedMedia = await db
+        .delete(library)
+        .where(
+          and(
+            eq(library.user_id, ctx.auth.userId),
+            eq(library.media_id, input.media_id)
+          )
+        )
+        .returning({ deletedMedia: library.media_id });
+
+      return { deletedMedia };
     }),
 });

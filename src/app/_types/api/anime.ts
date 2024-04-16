@@ -27,7 +27,7 @@ export const relation = z.object({
   image: z.string(),
   cover: z.string(),
   rating: z.number().nullable(),
-  type: z.string(),
+  type: z.string().nullable(),
 });
 
 export const anime = z.object({

@@ -3,8 +3,7 @@
 import { Button } from "@/app/_components/ui/button";
 import { trpc } from "@/app/_trpc/client";
 import { anime as animeInfo } from "@/app/_types/api/anime";
-import { auth, useSession } from "@clerk/nextjs";
-import { Bookmark, BookmarkCheck, LoaderCircle, Share2 } from "lucide-react";
+import { Bookmark, BookmarkCheck, Share2 } from "lucide-react";
 import toast from "react-hot-toast";
 import { z } from "zod";
 
@@ -18,14 +17,31 @@ export default function Interactions({
   userId: string | null;
 }) {
   const utils = trpc.useUtils();
-  
-  const query = trpc.library.get.useQuery({
-    media_id: `${anime.id}`,
+
+  let query;
+
+  if (userId) {
+    query = trpc.library.get.useQuery({
+      media_id: `${anime.id}`,
+    });
+    console.log(query.error ?? query.data);
+  }
+
+  const addMutation = trpc.library.add.useMutation({
+    onSuccess: () => {
+      toast.success("Added to the library");
+      utils.library.get.invalidate({
+        media_id: `${anime.id}`,
+      });
+    },
+    onError: (error) => {
+      toast.error(`${error.message}`);
+    },
   });
 
-  const mutation = trpc.library.add.useMutation({
+  const removeMutaion = trpc.library.remove.useMutation({
     onSuccess: () => {
-      toast.success("Successfully added");
+      toast.success("Removed from the library");
       utils.library.get.invalidate({
         media_id: `${anime.id}`,
       });
@@ -36,26 +52,30 @@ export default function Interactions({
   });
 
   const addToLibrary = () => {
-    mutation.mutate({
-      media_id: `${anime.id}`,
-      image: anime.image,
-      title_english: anime.title.english ?? "unknown",
-      title_native: anime.title.native ?? "unknown",
-      type: anime.type ?? "unknown",
-      status: "watchlist",
-    });
+    if (query.data) {
+      removeMutaion.mutate({ media_id: `${anime.id}` });
+    } else {
+      addMutation.mutate({
+        media_id: `${anime.id}`,
+        image: anime.image,
+        title_english: anime.title.english ?? "unknown",
+        title_native: anime.title.native ?? "unknown",
+        type: anime.type ?? "unknown",
+        status: "watchlist",
+      });
+    }
   };
 
   return (
     <div className="flex mt-4 gap-4">
       <Button>Watch now</Button>
       <Button
-        disabled={mutation.isPending || !userId}
+        disabled={addMutation.isPending || !userId}
         onClick={addToLibrary}
         variant="outline"
         size="icon"
       >
-        {!!query.data?.length ? (
+        {query?.data  ? (
           <BookmarkCheck className="h-4 w-4" />
         ) : (
           <Bookmark className="h-4 w-4" />

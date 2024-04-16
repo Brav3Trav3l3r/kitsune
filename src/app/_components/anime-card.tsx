@@ -8,6 +8,7 @@ const animeCard = z.object({
   totalEpisodes: z.number().optional(),
   episodeNumber: z.number().optional(),
   title: title,
+  type: z.string().nullable(),
 });
 
 type AnimeCardProps = z.infer<typeof animeCard>;
@@ -35,11 +36,14 @@ export default function AnimeCard({ anime }: { anime: AnimeCardProps }) {
         </div>
       </Link>
 
-      <div className="mt-2 text-sm">
-        <p className="text-foreground/50">
-          Episode {anime.totalEpisodes ?? anime.episodeNumber}
-        </p>
-        <p className="mt-1 line-clamp-3">
+      <div className="mt-2 ">
+        <div className="flex text-xs text-foreground/50 justify-between">
+          <p className="">
+            Ep. {anime.totalEpisodes ?? anime.episodeNumber ?? "?"}
+          </p>
+          {anime.type && <p>{anime.type}</p>}
+        </div>
+        <p className="mt-1 text-sm line-clamp-3 text-foreground">
           {anime.title.english ?? anime.title.romaji}
         </p>
       </div>

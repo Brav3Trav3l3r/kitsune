@@ -1,15 +1,13 @@
 import Container from "@/app/_components/container";
-import { Button } from "@/app/_components/ui/button";
 import { Separator } from "@/app/_components/ui/separator";
 import { anime as animeInfo } from "@/app/_types/api/anime";
+import { auth } from "@clerk/nextjs";
 import parse from "html-react-parser";
-import { Bookmark, Share2 } from "lucide-react";
 import { ZodError, z } from "zod";
 import Characters from "../_components/characters";
+import Interactions from "../_components/interactions";
 import Meta from "../_components/meta";
 import Relations from "../_components/relations";
-import Interactions from "../_components/interactions";
-import { auth } from "@clerk/nextjs";
 
 type Anime = z.infer<typeof animeInfo>;
 
@@ -74,7 +72,11 @@ export default async function Anime({
               </p>
               <div className="flex gap-4">
                 <p>
-                  {anime.type} ({anime.startDate?.year} - {anime.endDate?.year})
+                  {anime.type} ({anime.startDate?.year} -{" "}
+                  {anime.status === "Completed"
+                    ? anime.endDate?.year
+                    : anime.status}
+                  )
                 </p>
                 <Separator orientation="vertical" className="bg-foreground" />
                 <p>{anime.totalEpisodes} Episodes</p>

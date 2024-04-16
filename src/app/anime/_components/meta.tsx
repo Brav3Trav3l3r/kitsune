@@ -25,6 +25,11 @@ export default function Meta({ anime }: { anime: Anime }) {
       )}
 
       <div className="">
+        <p className="font-medium text-foreground/95">Status</p>
+        <p className=" text-foreground/50">{anime.status}</p>
+      </div>
+
+      <div className="">
         <p className="font-medium text-foreground/95">Score</p>
         <p className=" text-foreground/50">{anime.rating}%</p>
       </div>
