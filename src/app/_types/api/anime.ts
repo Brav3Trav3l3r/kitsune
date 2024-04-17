@@ -33,7 +33,7 @@ export const relation = z.object({
 export const anime = z.object({
   id: z.union([z.number(), z.string()]),
   image: z.string(),
-  totalEpisodes: z.number(),
+  totalEpisodes: z.number().nullable(),
   title: title,
   cover: z.string(),
   type: z.string().nullable(),

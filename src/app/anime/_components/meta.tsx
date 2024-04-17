@@ -24,24 +24,30 @@ export default function Meta({ anime }: { anime: Anime }) {
         </div>
       )}
 
-      <div className="">
-        <p className="font-medium text-foreground/95">Status</p>
-        <p className=" text-foreground/50">{anime.status}</p>
-      </div>
-
-      <div className="">
-        <p className="font-medium text-foreground/95">Score</p>
-        <p className=" text-foreground/50">{anime.rating}%</p>
-      </div>
-
-      <div className="">
-        <p className="font-medium text-foreground/95">Studio(s)</p>
-        <div className=" max-w-48 text-foreground/50 flex flex-col gap-1">
-          {anime.studios.map((studio) => (
-            <p key={studio}>{studio}</p>
-          ))}
+      {anime.status && (
+        <div className="">
+          <p className="font-medium text-foreground/95">Status</p>
+          <p className=" text-foreground/50">{anime.status}</p>
         </div>
-      </div>
+      )}
+
+      {anime.rating && (
+        <div className="">
+          <p className="font-medium text-foreground/95">Score</p>
+          <p className=" text-foreground/50">{anime.rating}%</p>
+        </div>
+      )}
+
+      {!!anime.studios.length && (
+        <div className="">
+          <p className="font-medium text-foreground/95">Studio(s)</p>
+          <div className=" max-w-48 text-foreground/50 flex flex-col gap-1">
+            {anime.studios.map((studio) => (
+              <p key={studio}>{studio}</p>
+            ))}
+          </div>
+        </div>
+      )}
 
       <div className="">
         <p className="font-medium text-foreground/95">Genre(s)</p>
@@ -52,10 +58,12 @@ export default function Meta({ anime }: { anime: Anime }) {
         </div>
       </div>
 
-      <div className="">
-        <p className="font-medium text-foreground/95">Season</p>
-        <p className=" text-foreground/50">{anime.season}</p>
-      </div>
+      {anime.season && (
+        <div>
+          <p className="font-medium text-foreground/95">Season</p>
+          <p className=" text-foreground/50">{anime.season}</p>
+        </div>
+      )}
 
       {!anime.synonyms
         ? ""

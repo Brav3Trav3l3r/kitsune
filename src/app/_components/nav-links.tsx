@@ -47,7 +47,7 @@ export default function NavLinks() {
             className={`${
               pathname === "/library" ? "text-primary" : "text-foreground"
             }  transition hover:opacity-75`}
-            href="#"
+            href="/library"
           >
             {" "}
             Library{" "}

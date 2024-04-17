@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { ZodError, z } from "zod";
 import AnimeCard from "./anime-card";
 
 const popularAnime = z.object({
@@ -38,8 +38,12 @@ export default async function PopularAnime() {
 
   try {
     response.parse(trendings);
-  } catch (error) {
-    console.log(error);
+  } catch (e) {
+    if (e instanceof ZodError) {
+      console.log(`${e.message} at anime`);
+    } else {
+      console.log("parsing error at anime");
+    }
   }
 
   return (

@@ -1,9 +1,12 @@
 "use client";
 
 import { Button } from "@/app/_components/ui/button";
+import { PRIMARY_COLOR } from "@/app/_lib/contants";
 import { trpc } from "@/app/_trpc/client";
 import { anime as animeInfo } from "@/app/_types/api/anime";
-import { Bookmark, BookmarkCheck, Share2 } from "lucide-react";
+import getBaseUrl from "@/app/_utils/get-base-url";
+import { Bookmark, BookmarkCheck, Loader, Share2 } from "lucide-react";
+import { usePathname } from "next/navigation";
 import toast from "react-hot-toast";
 import { z } from "zod";
 
@@ -17,15 +20,9 @@ export default function Interactions({
   userId: string | null;
 }) {
   const utils = trpc.useUtils();
-
-  let query;
-
-  if (userId) {
-    query = trpc.library.get.useQuery({
-      media_id: `${anime.id}`,
-    });
-    console.log(query.error ?? query.data);
-  }
+  const { data, error, isError, isLoading } = trpc.library.get.useQuery({
+    media_id: `${anime.id}`,
+  });
 
   const addMutation = trpc.library.add.useMutation({
     onSuccess: () => {
@@ -40,7 +37,7 @@ export default function Interactions({
   });
 
   const removeMutaion = trpc.library.remove.useMutation({
-    onSuccess: () => {
+    onSettled: () => {
       toast.success("Removed from the library");
       utils.library.get.invalidate({
         media_id: `${anime.id}`,
@@ -52,36 +49,50 @@ export default function Interactions({
   });
 
   const addToLibrary = () => {
-    if (query.data) {
-      removeMutaion.mutate({ media_id: `${anime.id}` });
-    } else {
-      addMutation.mutate({
-        media_id: `${anime.id}`,
-        image: anime.image,
-        title_english: anime.title.english ?? "unknown",
-        title_native: anime.title.native ?? "unknown",
-        type: anime.type ?? "unknown",
-        status: "watchlist",
-      });
+    if (userId) {
+      if (data && !!data.length) {
+        removeMutaion.mutate({ media_id: `${anime.id}` });
+      } else {
+        addMutation.mutate({
+          media_id: `${anime.id}`,
+          image: anime.image,
+          title_english: anime.title.english,
+          title_native: anime.title.native,
+          title_romaji: anime.title.romaji,
+          type: anime.type,
+        });
+      }
     }
+  };
+
+  const pathname = usePathname();
+  const copyUrl = () => {
+    navigator.clipboard.writeText(`${getBaseUrl(true)}${pathname}`);
+    toast.success("Copied to clipboard");
   };
 
   return (
     <div className="flex mt-4 gap-4">
       <Button>Watch now</Button>
       <Button
-        disabled={addMutation.isPending || !userId}
+        disabled={addMutation.isPending || !userId || isLoading}
         onClick={addToLibrary}
         variant="outline"
         size="icon"
       >
-        {query?.data  ? (
-          <BookmarkCheck className="h-4 w-4" />
+        {isLoading || addMutation.isPending || removeMutaion.isPending ? (
+          <Loader className="h-4 w-4 animate-spin" />
+        ) : data && !!data.length ? (
+          <Bookmark
+            fill={PRIMARY_COLOR}
+            color={PRIMARY_COLOR}
+            className="h-4 w-4"
+          />
         ) : (
           <Bookmark className="h-4 w-4" />
         )}
       </Button>
-      <Button variant="outline" size="icon">
+      <Button onClick={copyUrl} variant="outline" size="icon">
         <Share2 className="h-4 w-4" />
       </Button>
     </div>

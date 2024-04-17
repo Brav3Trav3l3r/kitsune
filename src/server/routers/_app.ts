@@ -1,4 +1,4 @@
-import { protectedProcedure, publicProcedure, router } from "../trpc";
+import { createCallerFactory, protectedProcedure, router } from "../trpc";
 import { libraryRouter } from "./library-router";
 
 export const appRouter = router({
@@ -8,7 +8,7 @@ export const appRouter = router({
   library: libraryRouter,
 });
 
-// const createCaller = createCallerFactory(appRouter);
-// export const serverCaller = createCaller({ auth: getAuth(req) });
+export const createCaller = createCallerFactory(appRouter);
+// export const serverCaller = createCaller();
 
 export type AppRouter = typeof appRouter;

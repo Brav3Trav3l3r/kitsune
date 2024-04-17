@@ -2,7 +2,6 @@ import AnimeTabs from "./_components/anime-tabs";
 import Banner from "./_components/banner";
 import Container from "./_components/container";
 import Continue from "./_components/continue";
-import { ThemeToggle } from "./_components/theme-toggle";
 
 export default async function Home() {
   return (

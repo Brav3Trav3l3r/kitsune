@@ -1,4 +1,10 @@
-import { pgEnum, pgTable, primaryKey, text, uuid } from "drizzle-orm/pg-core";
+import {
+  pgEnum,
+  pgTable,
+  primaryKey,
+  text,
+  timestamp,
+} from "drizzle-orm/pg-core";
 
 export const statusEnum = pgEnum("status", [
   "completed",
@@ -19,12 +25,13 @@ export const library = pgTable(
       ),
     title_engish: text("title_engish"),
     title_native: text("title_native"),
-    status: statusEnum("status").default("watchlist"),
+    title_romaji: text("title_romaji"),
+    media_status: statusEnum("media_status").default("watchlist").notNull(),
+    added_at: timestamp("added_at").defaultNow().notNull(),
   },
   (table) => {
     return {
       pkCustom: primaryKey({
-        name: "mediaByUser",
         columns: [table.media_id, table.user_id],
       }),
     };

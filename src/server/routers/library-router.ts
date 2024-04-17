@@ -1,11 +1,32 @@
+import { and, desc, eq } from "drizzle-orm";
 import { z } from "zod";
-import { protectedProcedure, router } from "../trpc";
 import db from "../db/drizzle";
 import { library } from "../db/schema";
-import { and, eq } from "drizzle-orm";
-import { takeUniqueOrThrow } from "./helper";
+import { protectedProcedure, router } from "../trpc";
 
 export const libraryRouter = router({
+  updateStatus: protectedProcedure
+    .input(
+      z.object({
+        media_id: z.string(),
+        media_status: z.enum(["completed", "watchlist", "watching"]),
+      })
+    )
+    .mutation(async ({ input }) => {
+      await db
+        .update(library)
+        .set({ media_status: input.media_status })
+        .where(eq(library.media_id, input.media_id));
+    }),
+  getAll: protectedProcedure.query(async ({ ctx }) => {
+    const media = await db
+      .select()
+      .from(library)
+      .where(eq(library.user_id, ctx.auth.userId))
+      .orderBy(desc(library.added_at));
+
+    return media;
+  }),
   get: protectedProcedure
     .input(z.object({ media_id: z.string() }))
     .query(async (opts) => {
@@ -19,7 +40,7 @@ export const libraryRouter = router({
             eq(library.media_id, input.media_id),
             eq(library.user_id, opts.ctx.auth.userId)
           )
-        ).then(takeUniqueOrThrow)
+        );
 
       return row;
     }),
@@ -27,11 +48,15 @@ export const libraryRouter = router({
     .input(
       z.object({
         media_id: z.string(),
-        type: z.string(),
+        type: z.string().nullable(),
         image: z.string(),
-        title_english: z.string(),
-        title_native: z.string(),
-        status: z.enum(["completed", "watchlist", "watching"]),
+        title_english: z.string().nullable().optional(),
+        title_native: z.string().nullable().optional(),
+        title_romaji: z.string().nullable().optional(),
+        media_status: z
+          .enum(["completed", "watchlist", "watching"])
+          .default("watchlist")
+          .optional(),
       })
     )
     .mutation(async (opts) => {
@@ -43,22 +68,20 @@ export const libraryRouter = router({
         type: input.type,
         title_engish: input.title_english,
         title_native: input.title_native,
-        status: input.status,
+        title_romaji: input.title_romaji,
+        media_status: input.media_status,
       });
     }),
   remove: protectedProcedure
     .input(z.object({ media_id: z.string() }))
     .mutation(async ({ ctx, input }) => {
-      const deletedMedia = await db
+      await db
         .delete(library)
         .where(
           and(
             eq(library.user_id, ctx.auth.userId),
             eq(library.media_id, input.media_id)
           )
-        )
-        .returning({ deletedMedia: library.media_id });
-
-      return { deletedMedia };
+        );
     }),
 });
