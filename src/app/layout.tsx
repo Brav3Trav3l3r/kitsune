@@ -6,6 +6,8 @@ import { ThemeProvider } from "./_components/theme-provider";
 import Navbar from "./_components/navbar";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "react-hot-toast";
+import AnnouncementBanner from "./_components/announcement-banner";
+import Footer from "./_components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,9 +32,13 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <TRPCProvider>
-              <Navbar />
-              <Toaster />
-              {children}
+              {/* <AnnouncementBanner /> */}
+              <div className="min-h-[100vh]">
+                <Navbar />
+                <Toaster />
+                {children}
+              </div>
+              <Footer />
             </TRPCProvider>
           </ThemeProvider>
         </ClerkProvider>

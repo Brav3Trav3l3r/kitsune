@@ -5,12 +5,13 @@ import Link from "next/link";
 import { Menu, Search } from "lucide-react";
 import { UserButton, auth } from "@clerk/nextjs";
 import NavLinks from "./nav-links";
+import { FaGithub } from "react-icons/fa";
 
 export default function Navbar() {
   const { userId } = auth();
 
   return (
-    <header className="border-b">
+    <header className="border-b bg-muted">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 ">
         <div className="flex h-16 items-center justify-between">
           <div className="flex gap-4 items-center">
@@ -29,7 +30,7 @@ export default function Navbar() {
               </svg>
             </Link>
 
-            <Input className="hidden lg:block" placeholder="Search" />
+            <Input className="hidden lg:block bg-card" placeholder="Search" />
             <div className="block lg:hidden">
               <Button variant="ghost" size="icon">
                 <Search />
@@ -64,6 +65,12 @@ export default function Navbar() {
               </Button>
             </div>
 
+            <a
+              target="_blank"
+              href="https://github.com/Brav3Trav3l3r/zen-anime"
+            >
+              <FaGithub size={32} />
+            </a>
             <ThemeToggle />
           </div>
         </div>

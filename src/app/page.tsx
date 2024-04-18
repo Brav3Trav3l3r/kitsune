@@ -14,7 +14,7 @@ export default async function Home() {
       <div className="flex gap-10 mt-10">
         <div className="flex-1">
           <Banner />
-          <Continue />
+          {/* <Continue /> */}
           <AnimeTabs />
         </div>
         <div className="basis-1/4 flex flex-col gap-8">
