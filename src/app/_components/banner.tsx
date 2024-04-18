@@ -1,6 +1,8 @@
 import parse from "html-react-parser";
 import anime from "../_data/animeData.json";
 import { Badge } from "./ui/badge";
+import { Button } from "./ui/button";
+import { Bookmark, Share2 } from "lucide-react";
 
 export default function Banner() {
   return (
@@ -15,7 +17,8 @@ export default function Banner() {
         <div className="absolute right-0 w-96 bg-gradient-to-l from-background to-transparent inset-y-0"></div>
       </div>
 
-      <div className="flex flex-col justify-end  gap-4 z-10">
+      <div className="flex flex-col justify-end gap-3 z-10">
+        <p className="text-xl font-bold">{anime.title.english}</p>
         <div className="flex gap-2 flex-wrap shrink-0">
           {anime.genres.map((el) => (
             <div className="" key={el}>
@@ -24,10 +27,19 @@ export default function Banner() {
           ))}
         </div>
 
-        <p className="text-xl font-bold">{anime.title.english}</p>
-        <p className="max-w-prose line-clamp-6 text-foreground/75 text-sm">
+        <div className="flex gap-4">
+          <Button>Watch</Button>
+          <Button variant="outline" size="icon">
+            <Bookmark className="h-4 w-4" />
+          </Button>
+          <Button variant="outline" size="icon">
+            <Share2 className="h-4 w-4" />
+          </Button>
+        </div>
+
+        {/* <p className="max-w-prose line-clamp-6 text-foreground/75 text-sm">
           {parse(anime.description)}
-        </p>
+        </p> */}
       </div>
     </div>
   );

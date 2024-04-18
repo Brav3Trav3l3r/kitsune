@@ -40,9 +40,9 @@ export default async function PopularAnime() {
     response.parse(trendings);
   } catch (e) {
     if (e instanceof ZodError) {
-      console.log(`${e.message} at anime`);
+      console.log(`${e.message} at popular`);
     } else {
-      console.log("parsing error at anime");
+      console.log("parsing error at popular");
     }
   }
 

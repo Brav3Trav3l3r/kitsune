@@ -38,9 +38,9 @@ export default async function RecentAnime() {
     response.parse(recenteAnime);
   } catch (e) {
     if (e instanceof ZodError) {
-      console.log(`${e.message} at anime`);
+      console.log(`${e.message} at recent`);
     } else {
-      console.log("parsing error at anime");
+      console.log("parsing error at recent");
     }
   }
 

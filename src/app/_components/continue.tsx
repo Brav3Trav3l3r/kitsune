@@ -39,15 +39,15 @@ export default async function Continue() {
     response.parse(recentUpdated);
   } catch (e) {
     if (e instanceof ZodError) {
-      console.log(`${e.message} at anime`);
+      console.log(`${e.message} continue`);
     } else {
-      console.log("parsing error at anime");
+      console.log("parsing error at continue");
     }
   }
 
   return (
     <div className="mt-8">
-      <div className="border-primary border-l-4 py-2 px-4 font-medium flex gap-4 items-center">
+      <div className="border-primary border-l-4 py-1 px-4 font-medium flex gap-4 items-center">
         <p>Continue watching</p>
         <div className="text-primary/75">
           <RefreshCcw size={20} />

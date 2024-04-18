@@ -37,7 +37,7 @@ export default async function Anime({
     if (e instanceof ZodError) {
       console.log(`${e.message} at anime for ${params.animeId}`);
     } else {
-      console.log("parsing error at anime");
+      console.log(`parsing error ${params.animeId}`);
     }
   }
 

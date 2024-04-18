@@ -4,7 +4,7 @@ import { title } from "../_types/api/anime";
 
 const trendingAnime = z.object({
   id: z.string(),
-  malId: z.number(),
+  malId: z.number().nullable(),
   title: title,
   image: z.string(),
   type: z.string(),
@@ -37,9 +37,9 @@ export default async function TrendingAnime() {
     response.parse(trendings);
   } catch (e) {
     if (e instanceof ZodError) {
-      console.log(`${e.message} at anime`);
+      console.log(`${e.message} at trending`);
     } else {
-      console.log("parsing error at anime");
+      console.log("parsing error at trending");
     }
   }
 

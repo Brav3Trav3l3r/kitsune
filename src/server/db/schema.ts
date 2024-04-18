@@ -23,7 +23,7 @@ export const library = pgTable(
       .default(
         "https://clarionhealthcare.com/wp-content/uploads/2020/12/default-fallback-image.png"
       ),
-    title_engish: text("title_engish"),
+    title_english: text("title_english"),
     title_native: text("title_native"),
     title_romaji: text("title_romaji"),
     media_status: statusEnum("media_status").default("watchlist").notNull(),

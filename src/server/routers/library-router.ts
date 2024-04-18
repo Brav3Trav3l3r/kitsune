@@ -1,8 +1,8 @@
-import { and, desc, eq } from "drizzle-orm";
+import { and, count, desc, eq } from "drizzle-orm";
 import { z } from "zod";
 import db from "../db/drizzle";
 import { library } from "../db/schema";
-import { protectedProcedure, router } from "../trpc";
+import { protectedProcedure, publicProcedure, router } from "../trpc";
 
 export const libraryRouter = router({
   updateStatus: protectedProcedure
@@ -66,7 +66,7 @@ export const libraryRouter = router({
         image: input.image,
         media_id: input.media_id,
         type: input.type,
-        title_engish: input.title_english,
+        title_english: input.title_english,
         title_native: input.title_native,
         title_romaji: input.title_romaji,
         media_status: input.media_status,
@@ -84,4 +84,39 @@ export const libraryRouter = router({
           )
         );
     }),
+
+  // public routes
+  mostWathed: publicProcedure.query(async () => {
+    const media = await db
+      .select({
+        count: count(library.media_id),
+        media_id: library.media_id,
+        title_romaji: library.title_romaji,
+        title_english: library.title_english,
+        title_native: library.title_native,
+        image: library.image,
+        type: library.type
+      })
+      .from(library)
+      .where(eq(library.media_status, "completed"))
+      .groupBy(
+        library.media_id,
+        library.title_english,
+        library.title_romaji,
+        library.title_native,
+        library.image,
+        library.type
+      )
+      .orderBy(desc(count(library.media_id)))
+      .limit(5);
+
+    return media;
+  }),
+  mostWatching: publicProcedure.query(async () => {
+    await db
+      .select()
+      .from(library)
+      .where(eq(library.media_status, "watching"))
+      .orderBy(desc(library.added_at));
+  }),
 });
