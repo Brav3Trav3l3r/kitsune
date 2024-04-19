@@ -30,6 +30,12 @@ export const relation = z.object({
   type: z.string().nullable(),
 });
 
+export const episode = z.object({
+  id: z.string(),
+  title: z.string().nullable().optional(),
+  image: z.string().nullable().optional(),
+});
+
 export const anime = z.object({
   id: z.union([z.number(), z.string()]),
   image: z.string(),
@@ -69,6 +75,7 @@ export const anime = z.object({
   synonyms: z.array(z.string()).optional(),
   characters: z.array(character),
   relations: z.array(relation),
+  episodes: z.array(episode),
 });
 
 export const animeResponse = z.object({

@@ -9,7 +9,7 @@ export default function Announcement() {
 
       <div className="bg-card py-2 px-4 mt-3 text-card-foreground/50">
         <p className="">
-          "Welcome to Zen Anime!{" "}
+          "Welcome to Zen Anime!
           <span className="text-card-foreground">🌟</span>
         </p>
         <br />

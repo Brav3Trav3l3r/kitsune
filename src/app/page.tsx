@@ -13,7 +13,7 @@ export default async function Home() {
     <Container>
       <div className="flex gap-10 mt-10">
         <div className="flex-1">
-          <Banner />
+          {/* <Banner /> */}
           {/* <Continue /> */}
           <AnimeTabs />
         </div>

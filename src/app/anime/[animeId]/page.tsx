@@ -13,7 +13,7 @@ type Anime = z.infer<typeof animeInfo>;
 
 const getAnime = async (animeId: string): Promise<Anime> => {
   const res = await fetch(
-    `${process.env.CONSUMET_URL}/meta/anilist/data/${animeId}`
+    `${process.env.NEXT_PUBLIC_CONSUMET_URL}/meta/anilist/info/${animeId}`
   );
 
   if (!res.ok) {

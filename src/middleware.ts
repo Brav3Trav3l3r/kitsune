@@ -8,7 +8,7 @@ import { type NextRequest, NextResponse } from "next/server";
 
 export default authMiddleware({
   // Allow signed out users to access the specified routes:
-  publicRoutes: ["/", "/anime/:path*"],
+  publicRoutes: ["/", "/anime/:path*", "/api/trpc/library.mostWatched"],
 });
 
 export const config = {

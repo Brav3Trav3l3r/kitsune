@@ -5,7 +5,7 @@ import { trpc } from "../_trpc/client";
 import { Check, CheckCheck, Eye, Users } from "lucide-react";
 
 export default function MostWatchedList() {
-  const query = trpc.library.mostWathed.useQuery();
+  const query = trpc.library.mostWatched.useQuery();
 
   if (query.isLoading) {
     return <p>Loading...</p>;
@@ -14,8 +14,6 @@ export default function MostWatchedList() {
   if (query.isError) {
     return <p>{query.error.message}</p>;
   }
-
-  console.log(query.data);
 
   return (
     <div className="flex flex-col gap-4 mt-6">

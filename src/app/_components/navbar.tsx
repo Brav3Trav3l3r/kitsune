@@ -11,7 +11,7 @@ export default function Navbar() {
   const { userId } = auth();
 
   return (
-    <header className="border-b bg-muted">
+    <header className="border-b bg-popover">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 ">
         <div className="flex h-16 items-center justify-between">
           <div className="flex gap-4 items-center">
@@ -30,7 +30,7 @@ export default function Navbar() {
               </svg>
             </Link>
 
-            <Input className="hidden lg:block bg-card" placeholder="Search" />
+            <Input className="hidden lg:block bg-secondary" placeholder="Search" />
             <div className="block lg:hidden">
               <Button variant="ghost" size="icon">
                 <Search />

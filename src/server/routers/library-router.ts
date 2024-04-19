@@ -86,7 +86,7 @@ export const libraryRouter = router({
     }),
 
   // public routes
-  mostWathed: publicProcedure.query(async () => {
+  mostWatched: publicProcedure.query(async () => {
     const media = await db
       .select({
         count: count(library.media_id),

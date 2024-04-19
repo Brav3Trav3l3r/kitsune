@@ -21,7 +21,7 @@ type RecentAnimeResponse = z.infer<typeof response>;
 
 const getRecent = async (): Promise<RecentAnimeResponse> => {
   const res = await fetch(
-    `${process.env.CONSUMET_URL}/meta/anilist/recent-episodes?page=1&perPage=15`
+    `${process.env.NEXT_PUBLIC_CONSUMET_URL}/meta/anilist/recent-episodes?page=1&perPage=15`
   );
 
   if (!res.ok) {

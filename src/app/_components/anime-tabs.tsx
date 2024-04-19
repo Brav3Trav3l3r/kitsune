@@ -5,7 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 
 export default function AnimeTabs() {
   return (
-    <div className="mt-12">
+    <div className="">
       <Tabs defaultValue="trending" className="">
         <TabsList className="border-b-2 w-full">
           <TabsTrigger value="trending">Trending</TabsTrigger>

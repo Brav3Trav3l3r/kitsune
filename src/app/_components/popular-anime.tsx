@@ -23,7 +23,7 @@ type AnimeResponse = z.infer<typeof response>;
 
 const getPopular = async (): Promise<AnimeResponse> => {
   const res = await fetch(
-    `${process.env.CONSUMET_URL}/meta/anilist/popular?page=1&perPage=15`
+    `${process.env.NEXT_PUBLIC_CONSUMET_URL}/meta/anilist/popular?page=1&perPage=15`
   );
 
   if (!res.ok) {

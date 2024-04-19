@@ -6,6 +6,7 @@ import { trpc } from "@/app/_trpc/client";
 import { anime as animeInfo } from "@/app/_types/api/anime";
 import getBaseUrl from "@/app/_utils/get-base-url";
 import { Bookmark, BookmarkCheck, Loader, Share2 } from "lucide-react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import toast from "react-hot-toast";
 import { z } from "zod";
@@ -73,7 +74,9 @@ export default function Interactions({
 
   return (
     <div className="flex mt-4 gap-4">
-      <Button>Watch now</Button>
+      <Link href={`/watch/${anime.id}?ep=${anime.episodes[0].id}`}>
+        <Button>Watch now</Button>
+      </Link>
       <Button
         disabled={addMutation.isPending || !userId || isLoading}
         onClick={addToLibrary}

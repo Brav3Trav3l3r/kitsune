@@ -19,8 +19,9 @@ const response = z.object({
 type AnimeResponse = z.infer<typeof response>;
 
 const getTrending = async (): Promise<AnimeResponse> => {
+  console.log(process.env.NEXT_PUBLIC_CONSUMET_URL)
   const res = await fetch(
-    `${process.env.CONSUMET_URL}/meta/anilist/trending?page=1&perPage=15`
+    `${process.env.NEXT_PUBLIC_CONSUMET_URL}/meta/anilist/trending?page=1&perPage=15`
   );
 
   if (!res.ok) {
