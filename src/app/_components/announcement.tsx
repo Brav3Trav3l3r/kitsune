@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Announcement() {
   return (
     <div>
@@ -8,8 +6,8 @@ export default function Announcement() {
       </p>
 
       <div className="bg-card py-2 px-4 mt-3 text-card-foreground/50">
-        <p className="">
-          "Welcome to Zen Anime!
+        <p>
+          Welcome to Zen Anime!
           <span className="text-card-foreground">🌟</span>
         </p>
         <br />
