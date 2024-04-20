@@ -12,8 +12,8 @@ dayjs.extend(localizedFormat);
 const animeCard = z.object({
   id: z.union([z.string(), z.number()]),
   image: z.string(),
-  totalEpisodes: z.number().optional(),
-  episodeNumber: z.number().optional(),
+  totalEpisodes: z.number().optional().nullable(),
+  episodeNumber: z.number().optional().nullable(),
   title: title,
   type: z.string().nullable().optional(),
   media_status: z.enum(["completed", "watchlist", "watching"]).optional(),
@@ -51,14 +51,14 @@ export default function AnimeCard({ anime }: { anime: AnimeCardProps }) {
         </div>
       </Link>
 
-      <div className="flex items-center justify-between mt-2">
-        {anime.added_at && (
+      {anime.added_at && (
+        <div className="flex items-center justify-between mt-2">
           <p className=" text-sm text-foreground/50 flex items-center gap-2">
             <Clock strokeWidth={3} size={14} />{" "}
             {dayjs(anime.added_at).format("ll")}
           </p>
-        )}
-      </div>
+        </div>
+      )}
 
       <div className="mt-2 ">
         <div className="flex text-sm text-foreground/50 justify-between">
@@ -69,7 +69,7 @@ export default function AnimeCard({ anime }: { anime: AnimeCardProps }) {
           )}
           {anime.type && <p>{anime.type}</p>}
         </div>
-        <p className="mt-1 text-sm line-clamp-3 text-foreground font-medium">
+        <p className="mt-1 text-sm line-clamp-3 font-medium">
           {anime.title.english ?? anime.title.romaji}
         </p>
       </div>

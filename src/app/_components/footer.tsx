@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-muted mt-20">
+    <footer className="bg-card text-card-foreground/50 mt-20">
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <div className="flex justify-center items-center gap-4 text-primary sm:justify-start ">
@@ -20,7 +20,7 @@ export default function Footer() {
             <p className="text-lg font-bold">Zen Anime</p>
           </div>
 
-          <p className="mt-4 text-center text-sm text-muted-foreground lg:mt-0 lg:text-right">
+          <p className="mt-4 text-center text-sm lg:mt-0 lg:text-right">
             Copyright &copy; 2024. All rights reserved.
           </p>
         </div>

@@ -17,6 +17,7 @@ const getAnime = async (animeId: string): Promise<Anime> => {
   );
 
   if (!res.ok) {
+    console.log(res)
     throw new Error("Could not fetch anime data");
   }
 

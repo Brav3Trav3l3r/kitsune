@@ -5,7 +5,7 @@ export default function Announcement() {
         Announcement
       </p>
 
-      <div className="bg-card py-2 px-4 mt-3 text-card-foreground/50">
+      <div className="bg-card py-2 px-4 mt-3 text-card-foreground/75 rounded">
         <p>
           Welcome to Zen Anime!
           <span className="text-card-foreground">🌟</span>

@@ -74,9 +74,13 @@ export default function Interactions({
 
   return (
     <div className="flex mt-4 gap-4">
-      <Link href={`/watch/${anime.id}?ep=${anime.episodes[0].id}`}>
-        <Button>Watch now</Button>
-      </Link>
+      {!!anime.episodes.length ? (
+        <Link href={`/watch/${anime.id}?ep=${anime.episodes[0].id}`}>
+          <Button>Watch now</Button>
+        </Link>
+      ) : (
+        <Button variant={"destructive"}>No episodes to watch</Button>
+      )}
       <Button
         disabled={addMutation.isPending || !userId || isLoading}
         onClick={addToLibrary}
