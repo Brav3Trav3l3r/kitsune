@@ -11,7 +11,7 @@ export default function QueryFilter() {
   const { inputRef } = filterCtx;
   const queryClient = useQueryClient();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
 
@@ -21,7 +21,6 @@ export default function QueryFilter() {
       <Button
         type="submit"
         onClick={() => {
-          console.log('submit')
           queryClient.invalidateQueries({ queryKey: ["results"] });
         }}
       >

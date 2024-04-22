@@ -2,11 +2,12 @@
 
 import AnimeCard from "@/app/_components/anime-card";
 import { title } from "@/app/_types/api/anime";
-import { useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { useContext } from "react";
 import { ZodError, z } from "zod";
 import { FilterContext } from "../_store/filter-context";
+import { Button } from "@/app/_components/ui/button";
 
 const advSearch = z.object({
   currentPage: z.number(),
@@ -28,9 +29,13 @@ type AdvSearchRes = z.infer<typeof advSearch>;
 
 export default function Results() {
   const filterCtx = useContext(FilterContext);
-  const { genres, inputRef, season, sort } = filterCtx;
+  const { genres, inputRef, season, sort, format } = filterCtx;
 
-  const fetchResults = async (): Promise<AdvSearchRes> => {
+  const fetchResults = async ({
+    pageParam,
+  }: {
+    pageParam: number;
+  }): Promise<AdvSearchRes> => {
     let url = `${process.env.NEXT_PUBLIC_CONSUMET_URL}/meta/anilist/advanced-search?perPage=15`;
 
     const serachParams = {
@@ -39,53 +44,68 @@ export default function Results() {
           ? inputRef.current.value
           : undefined,
       season: season && season !== "ALL" ? season : undefined,
+      format: format && format !== "ALL" ? format : undefined,
       genres: genres.length > 0 ? JSON.stringify(genres) : undefined,
       sort: sort ? JSON.stringify([sort]) : undefined,
+      page: pageParam,
     };
 
-    console.log(serachParams);
     const { data } = await axios.get(url, {
       params: serachParams,
     });
     return data;
   };
 
-  const { isPending, isError, error, data, isLoading } = useQuery({
-    queryKey: ["results", sort, genres, season],
+  const {
+    data,
+    error,
+    status,
+    fetchNextPage,
+    hasNextPage,
+    isFetching,
+    isFetchingNextPage,
+  } = useInfiniteQuery({
+    queryKey: ["results", sort, genres, season, format],
     queryFn: fetchResults,
+    initialPageParam: 1,
+    getNextPageParam: (lastPage, allPages, lastPageParam) => {
+      if (!lastPage.hasNextPage) {
+        return undefined;
+      }
+      return lastPageParam + 1;
+    },
   });
 
-  if (isPending) {
-    return <span>Pending...</span>;
+  if (status == "error") {
+    return <span>Error...</span>;
   }
 
-  if (isLoading) {
-    return <span>Loading...</span>;
-  }
-  
-  if (isError) {
-    return <span>Error: {error.message}</span>;
-  }
+  if (status == "success") {
+    return (
+      <div className="">
+        <div className="grid grid-cols-5 gap-x-4 gap-y-6 mt-6">
+          {data.pages.map((page) =>
+            page.results.map((anime) => (
+              <div className="" key={anime.id}>
+                <AnimeCard anime={anime} />
+              </div>
+            ))
+          )}
+        </div>
 
-  try {
-    advSearch.parse(data);
-  } catch (e) {
-    if (e instanceof ZodError) {
-      console.log(`${e.message} at results`);
-    } else {
-      console.log("parsing error at results");
-    }
-  }
-
-  return (
-    <div className="">
-      <div className="grid grid-cols-5 gap-x-4 gap-y-6 mt-6">
-        {data.results.map((anime) => (
-          <div className="" key={anime.id}>
-            <AnimeCard anime={anime} />
-          </div>
-        ))}
+        <div className="flex justify-center mt-8">
+          <Button
+            onClick={() => fetchNextPage()}
+            disabled={!hasNextPage || isFetchingNextPage}
+          >
+            {isFetchingNextPage
+              ? "Loading more..."
+              : hasNextPage
+              ? "Load More"
+              : "Nothing more to load"}
+          </Button>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
