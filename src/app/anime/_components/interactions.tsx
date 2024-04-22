@@ -79,7 +79,7 @@ export default function Interactions({
           <Button>Watch now</Button>
         </Link>
       ) : (
-        <Button variant={"destructive"}>No episodes to watch</Button>
+        <Button variant={"destructive"}>No Episodes Available</Button>
       )}
       <Button
         disabled={addMutation.isPending || !userId || isLoading}

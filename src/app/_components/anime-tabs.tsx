@@ -1,6 +1,4 @@
-import PopularAnime from "./popular-anime";
-import RecentAnime from "./recent-anime";
-import TrendingAnime from "./trending-anime";
+import AnimeResults from "./anime-results";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 
 export default function AnimeTabs() {
@@ -13,13 +11,13 @@ export default function AnimeTabs() {
           <TabsTrigger value="recent">Recent</TabsTrigger>
         </TabsList>
         <TabsContent value="trending" className="">
-          <TrendingAnime />
+          <AnimeResults url="trending" />
         </TabsContent>
         <TabsContent value="popular">
-          <PopularAnime />
+          <AnimeResults url="popular" />
         </TabsContent>
         <TabsContent value="recent">
-          <RecentAnime />
+          <AnimeResults url="recent-episodes" />
         </TabsContent>
       </Tabs>
     </div>

@@ -11,16 +11,22 @@ export default function QueryFilter() {
   const { inputRef } = filterCtx;
   const queryClient = useQueryClient();
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
-    <div className="flex gap-4">
+    <form onSubmit={handleSubmit} className="flex gap-4">
       <Input ref={inputRef} placeholder="Anime, Movies and other" />
       <Button
+        type="submit"
         onClick={() => {
+          console.log('submit')
           queryClient.invalidateQueries({ queryKey: ["results"] });
         }}
       >
         Search
       </Button>
-    </div>
+    </form>
   );
 }

@@ -50,14 +50,19 @@ export default function Results() {
     return data;
   };
 
-  const { isPending, isError, error, data } = useQuery({
-    queryKey: ["results"],
+  const { isPending, isError, error, data, isLoading } = useQuery({
+    queryKey: ["results", sort, genres, season],
     queryFn: fetchResults,
   });
 
   if (isPending) {
+    return <span>Pending...</span>;
+  }
+
+  if (isLoading) {
     return <span>Loading...</span>;
   }
+  
   if (isError) {
     return <span>Error: {error.message}</span>;
   }

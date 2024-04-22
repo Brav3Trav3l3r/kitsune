@@ -8,23 +8,23 @@ export default function NavLinks() {
 
   return (
     <nav aria-label="Global">
-      <ul className="flex items-center gap-6">
+      <ul className="flex items-center gap-6 font-medium">
         <li>
           <Link
             className={`${
               pathname === "/" ? "text-primary" : "text-card-foreground"
-            }  transition hover:opacity-75  `}
+            }  transition hover:opacity-95`}
             href="/"
           >
             {" "}
             Home{" "}
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link
             className={`${
               pathname === "/movies" ? "text-primary" : "text-card-foreground"
-            }  transition hover:opacity-75`}
+            }  transition hover:opacity-95`}
             href="#"
           >
             {" "}
@@ -35,18 +35,18 @@ export default function NavLinks() {
           <Link
             className={`${
               pathname === "/anime" ? "text-primary" : "text-card-foreground"
-            }  transition hover:opacity-75`}
+            }  transition hover:opacity-95`}
             href="#"
           >
             {" "}
             Anime{" "}
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link
             className={`${
               pathname === "/library" ? "text-primary" : "text-card-foreground"
-            }  transition hover:opacity-75`}
+            }  transition hover:opacity-95`}
             href="/library"
           >
             {" "}
