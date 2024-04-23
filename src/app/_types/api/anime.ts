@@ -34,6 +34,7 @@ export const episode = z.object({
   id: z.string(),
   title: z.string().nullable().optional(),
   image: z.string().nullable().optional(),
+  number: z.number(),
 });
 
 export const anime = z.object({

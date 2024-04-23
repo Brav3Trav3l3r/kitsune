@@ -1,11 +1,11 @@
+import { UserButton, auth } from "@clerk/nextjs";
+import { Menu, Search } from "lucide-react";
+import Link from "next/link";
+import { FaGithub } from "react-icons/fa";
+import NavLinks from "./nav-links";
 import { ThemeToggle } from "./theme-toggle";
 import { Button } from "./ui/button";
-import { Input } from "./ui/input";
-import Link from "next/link";
-import { Menu, Search } from "lucide-react";
-import { UserButton, auth } from "@clerk/nextjs";
-import NavLinks from "./nav-links";
-import { FaGithub } from "react-icons/fa";
+import Image from "next/image";
 
 export default function Navbar() {
   const { userId } = auth();
@@ -19,8 +19,8 @@ export default function Navbar() {
               <span className="sr-only">Home</span>
               <div className="w-16 h-16">
                 <img
-                  src="logo.png"
-                  alt=""
+                  src={"/image/logo.png"}
+                  alt="Kitsune logo"
                   className="h-full w-full object-contain"
                 />
               </div>

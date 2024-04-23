@@ -24,9 +24,11 @@ interface Source {
 }
 
 const formatSources = (arr: ApiSource[]): Source[] => {
+  console.log(process.env.NEXT_PUBLIC_PROXY_URL)
   return arr.map((source) => {
     return {
-      src: source.url,
+      // src: `${process.env.NEXT_PUBLIC_PROXY_URL}/m3u8-proxy?url=${source.url}`,
+      src: `${source.url}`,
       type: source.isM3U8 ? "application/x-mpegurl" : "video/mp4",
     };
   });
@@ -48,5 +50,9 @@ export default function Media() {
     });
   }, [epId]);
 
-  return <div>{sources && <Player sources={formatSources(sources)} />}</div>;
+  return (
+    <div className="aspect-video">
+      {sources && <Player sources={formatSources(sources)} />}
+    </div>
+  );
 }

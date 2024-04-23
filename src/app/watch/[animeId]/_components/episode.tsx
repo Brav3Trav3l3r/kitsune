@@ -21,8 +21,8 @@ export default function Episode({
         className={`${
           ep == epId
             ? "bg-primary text-primary-foreground"
-            : "bg-muted text-muted-foreground"
-        } flex justify-center p-1 `}
+            : "bg-popover text-popover-foreground"
+        } flex justify-center p-1 rounded`}
       >
         {index + 1}
       </div>

@@ -8,6 +8,7 @@ import { useContext } from "react";
 import { ZodError, z } from "zod";
 import { FilterContext } from "../_store/filter-context";
 import { Button } from "@/app/_components/ui/button";
+import AnimeCardSkeleton from "@/app/_components/ui/skeleton/anime-card-skeleton";
 
 const advSearch = z.object({
   currentPage: z.number(),
@@ -60,6 +61,7 @@ export default function Results() {
     data,
     error,
     status,
+    isPending,
     fetchNextPage,
     hasNextPage,
     isFetching,
@@ -80,6 +82,16 @@ export default function Results() {
     return <span>Error...</span>;
   }
 
+  if (isPending) {
+    return (
+      <div className="grid grid-cols-5 gap-4 mt-6 gap-y-8">
+        {[...Array(15)].map((e, i) => (
+          <AnimeCardSkeleton key={i} />
+        ))}
+      </div>
+    );
+  }
+
   if (status == "success") {
     return (
       <div className="">
@@ -92,6 +104,14 @@ export default function Results() {
             ))
           )}
         </div>
+
+        {isFetchingNextPage && (
+          <div className="grid grid-cols-5 gap-4 mt-6 gap-y-8">
+            {[...Array(10)].map((e, i) => (
+              <AnimeCardSkeleton key={i} />
+            ))}
+          </div>
+        )}
 
         <div className="flex justify-center mt-8">
           <Button

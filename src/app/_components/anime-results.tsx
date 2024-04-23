@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { Skeleton } from "./ui/skeleton";
+import AnimeCardSkeleton from "./ui/skeleton/anime-card-skeleton";
 
 const trendingAnime = z.object({
   id: z.string(),
@@ -51,9 +52,10 @@ export default function AnimeResults({ url }: { url: string }) {
     error,
     status,
     fetchNextPage,
+    isFetchingNextPage,
     hasNextPage,
     isFetching,
-    isFetchingNextPage,
+    isPending,
   } = useInfiniteQuery({
     queryKey: [url],
     queryFn: getResults,
@@ -67,7 +69,17 @@ export default function AnimeResults({ url }: { url: string }) {
   });
 
   if (status == "error") {
-    return <span>Error...</span>;
+    return <span>{error.message}</span>;
+  }
+
+  if (isPending) {
+    return (
+      <div className="grid grid-cols-5 gap-4 mt-6 gap-y-8">
+        {[...Array(15)].map((e, i) => (
+          <AnimeCardSkeleton key={i} />
+        ))}
+      </div>
+    );
   }
 
   if (status === "success") {
@@ -82,6 +94,14 @@ export default function AnimeResults({ url }: { url: string }) {
             ))
           )}
         </div>
+
+        {isFetchingNextPage && (
+          <div className="grid grid-cols-5 gap-4 mt-6 gap-y-8">
+            {[...Array(10)].map((e, i) => (
+              <AnimeCardSkeleton key={i} />
+            ))}
+          </div>
+        )}
 
         <div className="flex justify-center mt-8">
           <Button

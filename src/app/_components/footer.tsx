@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BsDiscord, BsReddit } from "react-icons/bs";
 import Container from "./container";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -11,8 +12,8 @@ export default function Footer() {
             <span className="sr-only">Home</span>
             <div className="w-28 h-28">
               <img
-                src="logo.png"
-                alt=""
+                src={"/image/logo.png"}
+                alt="Kitsune logo"
                 className="h-full w-full object-contain"
               />
             </div>

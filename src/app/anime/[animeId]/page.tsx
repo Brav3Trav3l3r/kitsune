@@ -17,7 +17,7 @@ const getAnime = async (animeId: string): Promise<Anime> => {
   );
 
   if (!res.ok) {
-    console.log(res)
+    console.log(res);
     throw new Error("Could not fetch anime data");
   }
 
@@ -89,8 +89,8 @@ export default async function Anime({
                 {anime.description && parse(anime.description)}
               </p>
 
-              <Relations relations={anime.relations} />
-              <Characters characters={anime.characters} />
+              {anime.relations && <Relations relations={anime.relations} />}
+              {anime.characters && <Characters characters={anime.characters} />}
             </div>
           </div>
         </Container>
