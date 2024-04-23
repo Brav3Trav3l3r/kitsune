@@ -81,6 +81,7 @@ export default function Interactions({
       ) : (
         <Button variant={"destructive"}>No Episodes Available</Button>
       )}
+
       <Button
         disabled={addMutation.isPending || !userId || isLoading}
         onClick={addToLibrary}
@@ -99,6 +100,7 @@ export default function Interactions({
           <Bookmark className="h-4 w-4" />
         )}
       </Button>
+      
       <Button onClick={copyUrl} variant="outline" size="icon">
         <Share2 className="h-4 w-4" />
       </Button>

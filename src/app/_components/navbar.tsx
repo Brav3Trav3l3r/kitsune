@@ -51,7 +51,7 @@ export default function Navbar() {
                 </div>
               </div>
             ) : (
-              <UserButton />
+              <UserButton afterSignOutUrl="/" />
             )}
 
             <div className="block md:hidden">

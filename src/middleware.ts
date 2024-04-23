@@ -1,11 +1,6 @@
 import { authMiddleware } from "@clerk/nextjs";
 import { type NextRequest, NextResponse } from "next/server";
 
-// export function middleware(request: NextRequest) {
-//   console.log("middleware ran");
-//   return NextResponse.next();
-// }
-
 export default authMiddleware({
   // Allow signed out users to access the specified routes:
   publicRoutes: [

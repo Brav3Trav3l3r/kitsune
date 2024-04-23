@@ -8,7 +8,6 @@ export default function loading() {
       <Container>
         <div className="flex gap-8">
           <div className="basis-1/4 rounded">
-            {/* <Filters /> */}
             <div className="flex flex-col gap-6">
               <Skeleton className="h-10" />
               <Skeleton className="h-10" />
