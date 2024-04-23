@@ -12,7 +12,7 @@ Welcome to **Kitsune**, a Anime Streaming Website project! This platform is desi
 ### Technologies Used:
 
 - Frontend: TypeScript, Next.js, React Query, Tailwind CSS
-- Backend:  tRPC, DrizzleORM
+- Backend: tRPC, DrizzleORM
 - Authentication: Clerk
 - Database: Serverless PostgreSQL by Neon
 - Hosting: Vercel
@@ -35,6 +35,16 @@ Install dependencies
 
 ```bash
   npm install
+```
+
+Create .env.local and add your environment variables
+
+```bash
+  # NEXT_PUBLIC_VERCEL_URL=
+  # NEXT_PUBLIC_CONSUMET_URL=
+  # NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+  # CLERK_SECRET_KEY=
+  # NEON_DATABASE_URL=
 ```
 
 Start the server

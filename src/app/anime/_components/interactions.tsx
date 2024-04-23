@@ -68,7 +68,7 @@ export default function Interactions({
 
   const pathname = usePathname();
   const copyUrl = () => {
-    navigator.clipboard.writeText(`${getBaseUrl(true)}${pathname}`);
+    navigator.clipboard.writeText(`${getBaseUrl(true)}/${pathname}`);
     toast.success("Copied to clipboard");
   };
 
