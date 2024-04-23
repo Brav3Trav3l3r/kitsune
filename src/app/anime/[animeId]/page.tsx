@@ -8,6 +8,7 @@ import Characters from "../_components/characters";
 import Interactions from "../_components/interactions";
 import Meta from "../_components/meta";
 import Relations from "../_components/relations";
+import MetaDialog from "../_components/meta-dialog";
 
 type Anime = z.infer<typeof animeInfo>;
 
@@ -52,11 +53,12 @@ export default async function Anime({
         />
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background to-transparent h-48"></div>
       </div>
+
       <div className="-mt-32 relative z-10">
         <Container>
-          <div className="flex gap-10">
-            <div className="">
-              <div className="h-96 shrink-0 aspect-[2/3] rounded-lg overflow-hidden drop-shadow-2xl">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-8">
+            <div className="flex lg:flex-col gap-4 items-end lg:items-start">
+              <div className="h-56 lg:h-96 shrink-0 aspect-[2/3] rounded-lg overflow-hidden drop-shadow-2xl">
                 <img
                   src={anime.image}
                   alt=""
@@ -64,10 +66,16 @@ export default async function Anime({
                 />
               </div>
 
-              <Meta anime={anime} />
+              <div className="lg:hidden">
+                <MetaDialog anime={anime} />
+              </div>
+
+              <div className="hidden lg:block">
+                <Meta anime={anime} />
+              </div>
             </div>
 
-            <div className="mt-8 flex flex-col gap-2">
+            <div className="lg:mt-8 flex flex-col gap-2">
               <p className="text-3xl font-semibold">
                 {anime.title?.english ?? anime.title?.romaji}
               </p>

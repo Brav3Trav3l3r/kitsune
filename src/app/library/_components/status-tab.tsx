@@ -39,7 +39,7 @@ export default function StatusTab({
   }
 
   return (
-    <div className="grid grid-cols-6 mt-4 gap-4 gap-y-6">
+    <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6  mt-4 gap-4 gap-y-6">
       {media.map((content) => (
         <AnimeCard
           anime={{

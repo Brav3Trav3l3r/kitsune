@@ -13,7 +13,7 @@ export default function Characters({ characters }: { characters: Characters }) {
     <div className="mt-8">
       <p className="text-lg font-medium">Characters</p>
 
-      <div className="mt-4 grid grid-cols-4 gap-6 ">
+      <div className="mt-4 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 ">
         {characters.map((character) => (
           <div className="flex gap-3 items-center" key={character.id}>
             <Avatar className="h-20 w-20">

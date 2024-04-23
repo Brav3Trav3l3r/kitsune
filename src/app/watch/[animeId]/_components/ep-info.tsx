@@ -13,7 +13,7 @@ export default function EpInfo({ animeInfo }: { animeInfo: Anime }) {
   const episode = animeInfo.episodes.find((ep) => ep.id === epId);
 
   return (
-    <div className="mt-6">
+    <div className="mt-3 lg:mt-6">
       <p className="font-semibold">
         {episode?.title ?? `Ep. ${episode?.number}`}
       </p>
@@ -28,7 +28,7 @@ export default function EpInfo({ animeInfo }: { animeInfo: Anime }) {
           </div>
         </Link>
 
-        <div className="flex flex-col gap-1 ">
+        <div className="flex flex-col gap-1">
           <p className="">
             {animeInfo.title.english ?? animeInfo.title.romaji}
           </p>

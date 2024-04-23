@@ -15,16 +15,18 @@ export default function SortFilter() {
   const { sort, setSort } = filterCtx;
 
   return (
-    <Select value={sort} onValueChange={setSort}>
-      <SelectTrigger className="">
-        <SelectValue placeholder="Sort by" />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectItem value="POPULARITY_DESC">Popularity</SelectItem>
-        <SelectItem value="TRENDING_DESC">Trending</SelectItem>
-        <SelectItem value="START_DATE_DESC">Recent</SelectItem>
-        <SelectItem value="SCORE_DESC">Score</SelectItem>
-      </SelectContent>
-    </Select>
+    <div className="">
+      <Select value={sort} onValueChange={setSort}>
+        <SelectTrigger className="">
+          <SelectValue placeholder="Sort by" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="POPULARITY_DESC">Popularity</SelectItem>
+          <SelectItem value="TRENDING_DESC">Trending</SelectItem>
+          <SelectItem value="START_DATE_DESC">Recent</SelectItem>
+          <SelectItem value="SCORE_DESC">Score</SelectItem>
+        </SelectContent>
+      </Select>
+    </div>
   );
 }

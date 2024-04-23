@@ -9,7 +9,7 @@ export default function Meta({ anime }: { anime: Anime }) {
   dayjs.extend(localizedFormat);
 
   return (
-    <div className="mt-6 flex flex-col gap-4 *:flex *:flex-col *:gap-1 text-sm">
+    <div className="mt-6 flex lg:flex-col gap-4 *:flex *:flex-col *:gap-1 text-sm">
       {anime.nextAiringEpisode && (
         <div>
           <p className="font-medium text-foreground/95">Airing</p>

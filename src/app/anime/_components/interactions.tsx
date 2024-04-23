@@ -85,7 +85,7 @@ export default function Interactions({
       <Button
         disabled={addMutation.isPending || !userId || isLoading}
         onClick={addToLibrary}
-        variant="outline"
+        variant="secondary"
         size="icon"
       >
         {isLoading || addMutation.isPending || removeMutaion.isPending ? (
@@ -100,8 +100,8 @@ export default function Interactions({
           <Bookmark className="h-4 w-4" />
         )}
       </Button>
-      
-      <Button onClick={copyUrl} variant="outline" size="icon">
+
+      <Button onClick={copyUrl} variant="secondary" size="icon">
         <Share2 className="h-4 w-4" />
       </Button>
     </div>

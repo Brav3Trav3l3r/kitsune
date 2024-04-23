@@ -30,7 +30,7 @@ export default function FormatFilter() {
   };
 
   return (
-    <div className="">
+    <div >
       <Select value={format} onValueChange={handleFormatChange}>
         <SelectTrigger className="">
           <SelectValue placeholder="Format" />

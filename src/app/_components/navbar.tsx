@@ -1,11 +1,11 @@
 import { UserButton, auth } from "@clerk/nextjs";
-import { Menu, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
+import MenuDropdown from "./menu-dropdown";
 import NavLinks from "./nav-links";
 import { ThemeToggle } from "./theme-toggle";
 import { Button } from "./ui/button";
-import Image from "next/image";
 
 export default function Navbar() {
   const { userId } = auth();
@@ -14,7 +14,7 @@ export default function Navbar() {
     <header className="border-b bg-card">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 ">
         <div className="flex h-20 items-center justify-between">
-          <div className="flex gap-4 items-center">
+          <div className="flex gap-3 md:gap-4 items-center">
             <Link className="" href="/">
               <span className="sr-only">Home</span>
               <div className="w-16 h-16">
@@ -37,7 +37,7 @@ export default function Navbar() {
             <NavLinks />
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3 md:gap-4">
             {!userId ? (
               <div className="sm:flex sm:gap-4">
                 <Link href="/sign-in">
@@ -54,19 +54,18 @@ export default function Navbar() {
               <UserButton afterSignOutUrl="/" />
             )}
 
-            <div className="block md:hidden">
-              <Button variant="outline" size="icon">
-                <Menu />
-              </Button>
-            </div>
-
             <a
               target="_blank"
               href="https://github.com/Brav3Trav3l3r/zen-anime"
+              className="hidden md:block"
             >
               <FaGithub size={32} />
             </a>
             <ThemeToggle />
+
+            <div className="block md:hidden">
+              <MenuDropdown />
+            </div>
           </div>
         </div>
       </div>

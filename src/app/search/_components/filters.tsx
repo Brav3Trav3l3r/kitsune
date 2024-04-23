@@ -7,10 +7,12 @@ import FormatFilter from "./format-filter";
 type Checked = DropdownMenuCheckboxItemProps["checked"];
 export default function Filters() {
   return (
-    <div className="flex flex-col gap-6">
-      <FormatFilter />
-      <SeasonFilter />
-      <SortFilter />
+    <div className="flex flex-col gap-4 lg:gap-6">
+      <div className="flex gap-3 *:flex-1">
+        <FormatFilter />
+        <SeasonFilter />
+        <SortFilter />
+      </div>
       <GenresFilter />
     </div>
   );

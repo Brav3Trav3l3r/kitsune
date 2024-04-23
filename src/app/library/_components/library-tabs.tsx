@@ -10,9 +10,22 @@ import {
 } from "../../_components/ui/tabs";
 import StatusTab from "./status-tab";
 import { trpc } from "@/app/_trpc/client";
+import AnimeCardSkeleton from "@/app/_components/ui/skeleton/anime-card-skeleton";
 
 export default function LibraryTabs() {
-  const { data, error, isLoading, isError } = trpc.library.getAll.useQuery();
+  const { data, error, isLoading, isError, isPending } =
+    trpc.library.getAll.useQuery();
+
+  const loader = (
+    <div className="">
+      <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6  mt-4 gap-4 gap-y-6">
+        <AnimeCardSkeleton />
+        <AnimeCardSkeleton />
+        <AnimeCardSkeleton />
+        <AnimeCardSkeleton />
+      </div>
+    </div>
+  );
 
   return (
     <Tabs defaultValue="watching" className="">
@@ -37,6 +50,8 @@ export default function LibraryTabs() {
         </TabsTrigger>
       </TabsList>
       <TabsContent value="watching" className="">
+        {isLoading && loader}
+
         {data && (
           <StatusTab
             status="watching"
@@ -45,6 +60,8 @@ export default function LibraryTabs() {
         )}
       </TabsContent>
       <TabsContent value="toWatch">
+        {isLoading && loader}
+
         {data && (
           <StatusTab
             status="watchlist"
@@ -53,6 +70,8 @@ export default function LibraryTabs() {
         )}
       </TabsContent>
       <TabsContent value="watched">
+        {isLoading && loader}
+
         {data && (
           <StatusTab
             status="completed"

@@ -11,7 +11,7 @@ import { IoLogoDiscord } from "react-icons/io5";
 export default async function Home() {
   return (
     <Container>
-      <div className="flex gap-10 mt-10">
+      <div className="flex flex-col-reverse lg:flex-row gap-10 mt-10">
         <div className="flex-1">
           {/* <Banner /> */}
           {/* <Continue /> */}

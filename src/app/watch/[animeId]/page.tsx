@@ -28,12 +28,12 @@ export default async function Page({
 
   return (
     <Container>
-      <div className="flex gap-6 mt-8">
+      <div className="flex flex-col lg:flex-row mt-4 gap-4 lg:gap-6 lg:mt-8">
         <div className="flex-1">
           <Media />
           <EpInfo animeInfo={animeInfo} />
         </div>
-        <div className="basis-1/4 p-2 bg-accent rounded h-[500px] overflow-y-auto">
+        <div className="basis-1/4 lg:mt-0 p-2 bg-accent rounded max-h-[500px] overflow-y-auto">
           <Episodes episodes={animeInfo.episodes} animeId={params.animeId} />
         </div>
       </div>

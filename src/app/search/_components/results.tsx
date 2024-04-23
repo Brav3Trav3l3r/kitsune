@@ -84,7 +84,7 @@ export default function Results() {
 
   if (isPending) {
     return (
-      <div className="grid grid-cols-5 gap-4 mt-6 gap-y-8">
+      <div className="grid grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4 mt-6 gap-y-8">
         {[...Array(15)].map((e, i) => (
           <AnimeCardSkeleton key={i} />
         ))}
@@ -95,7 +95,7 @@ export default function Results() {
   if (status == "success") {
     return (
       <div className="">
-        <div className="grid grid-cols-5 gap-x-4 gap-y-6 mt-6">
+        <div className="grid grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-x-4 gap-y-6 mt-6">
           {data.pages.map((page) =>
             page.results.map((anime) => (
               <div className="" key={anime.id}>
@@ -106,7 +106,7 @@ export default function Results() {
         </div>
 
         {isFetchingNextPage && (
-          <div className="grid grid-cols-5 gap-4 mt-6 gap-y-8">
+          <div className="grid grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4 mt-6 gap-y-8">
             {[...Array(10)].map((e, i) => (
               <AnimeCardSkeleton key={i} />
             ))}
