@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Kitsume - Anime Streaming Website
 
-## Getting Started
+Welcome to **Kitsune**, a Anime Streaming Website project! This platform is designed to provide anime enthusiasts with a convenient and enjoyable way to watch their favorite anime series and movies online. With a user-friendly interface and a vast library of anime content, users can easily discover, stream, and enjoy the latest and greatest anime titles.
 
-First, run the development server:
+### Features:
+
+- **Extensive Library**: Access a wide range of anime series and movies across various genres.
+- **Search and Filter**: Easily find specific anime titles using our search and filter functionality.
+- **Library Creation**: Build your own personal library by adding your favorite anime titles for quick access.
+- **Responsive Design**: Enjoy seamless streaming across devices with our responsive design.
+
+### Technologies Used:
+
+- Frontend: TypeScript, Next.js, React Query, Tailwind CSS
+- Backend:  tRPC, DrizzleORM
+- Authentication: Clerk
+- Database: Serverless PostgreSQL by Neon
+- Hosting: Vercel
+
+### Getting Started:
+
+Clone the project
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone https://github.com/Brav3Trav3l3r/kitsune.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Go to the project directory
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+  cd kitsune
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Install dependencies
 
-## Learn More
+```bash
+  npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+Start the server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+  npm run dev
+```
