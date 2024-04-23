@@ -4,7 +4,7 @@ export default function getBaseUrl(fullPath = false) {
     return "";
   if (process.env.NEXT_PUBLIC_VERCEL_URL)
     // reference for vercel.com
-    return `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`;
+    return `${process.env.NEXT_PUBLIC_VERCEL_URL}`;
   // assume localhost
   return `http://localhost:${process.env.PORT ?? 3000}`;
 }
