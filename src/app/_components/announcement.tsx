@@ -7,7 +7,7 @@ export default function Announcement() {
 
       <div className="bg-card py-2 px-4 mt-3 text-card-foreground/75 rounded">
         <p>
-          Welcome to Zen Anime!
+          Welcome to Kitsune!
           <span className="text-card-foreground">🌟</span>
         </p>
         <br />

@@ -1,4 +1,4 @@
-# Kitsume - Anime Streaming Website
+# Kitsune - Anime Streaming Website
 
 Welcome to **Kitsune**, a Anime Streaming Website project! This platform is designed to provide anime enthusiasts with a convenient and enjoyable way to watch their favorite anime series and movies online. With a user-friendly interface and a vast library of anime content, users can easily discover, stream, and enjoy the latest and greatest anime titles.
 
